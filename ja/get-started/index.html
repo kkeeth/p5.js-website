@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">get started | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="get-started-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main id="content" >
+
+      <h1>スタート</h1>
+
+      <p>このページでは、p5.jsプロジェクトのセットアップと 最初のスケッチの作成方法について説明します。 始めるには <a href="https://editor.p5js.org" target="_blank">p5.js editor</a>を使用するのが最も簡単です。Webエディターを開き、 <a href="#sketch">最初のスケッチ</a>を作成できます。 p5.jsのデスクトップ版で作業したい場合は、こちらを参照してください: <a href="#settingUp">ダウンロード手順</a>.
+      </p>
+
+
+
+      <h2 class="start-element" id="sketch">最初のスケッチ</h2>
+
+      <div class="info">
+        <h3 class="sr-only">円を描画するコードサンプル</h3>
+        <p> <a href='https://editor.p5js.org/'>p5.js web editor</a>の中で、以下のコードを見つけることができます：</p>
+
+<pre id="first-sketch1"><code class="language-javascript">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+}
+
+</code></pre>
+        <div class="edit_space">
+          <button id="copy_sketch1" class="copy_button">コピー</button>
+        </div>
+        <p> <code class="language-javascript">background(220);</code>の下に、以下のコードを追加します：<code class="language-javascript">ellipse(50,50,80,80);</code>.</p>
+
+        <p>ここまでで、コードは以下のようになります：</p>
+        <h3 class="sr-only">円を描画するコードサンプル</h3>
+
+<pre id="first-sketch2"><code class="language-javascript">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(220);
+  ellipse(50,50,80,80);
+}
+
+</code></pre>
+        <div class="edit_space">
+          <button id="copy_sketch2" class="copy_button">コピー</button>
+        </div>
+        <p style="margin-top: 1.5em;">今追加した行は 「中心が左から50ピクセル、上から50ピクセルの位置にある、幅と高さが80ピクセルの楕円」 を描画します。</p>
+        <p>エディターで再生ボタンを押して、コードが実行されるのを確認しましょう！</p>
+        <h3 class="sr-only">スクリーンリーダーユーザー向け注意事項</h3>
+        <p>もしスクリーンリーダーを使用している場合は、 p5オンラインエディターでアクセシブル出力をオンにする必要があります。 エディターの外部では、HTMLにアクセシビリティライブラリを追加する必要があります。 詳細については、 これを参照してください:<a href="../learn/p5-screen-reader.html" target="_blank">「スクリーンリーダーを使用したp5チュートリアル」.</a>
+        </p>
+        <p>すべて正しく入力した場合、 以下がディスプレイウィンドウに表示されます。</p>
+
+        <img src="../../assets/img/get-started/first-sketch.png" alt='キャンバスには、幅と高さが50で位置が80 x、80 yの円が描かれています。'/>
+
+        <p>何も表示されない場合、 エディターが入力内容を理解できていない可能性があります。 この場合、サンプルのコードを正確にコピーしていることを確認してください。 数値は括弧内に含まれ、それらの間にはカンマが必要であり、行末にはセミコロンが必要です。 また、ellipseは正しい綴りで記述されている必要があります。</p>
+
+        <p>プログラミングを始める上で最も難しいことの一つは、 構文を非常に具体的に指定する必要があることです。 ブラウザはあなたが何を言いたいかを常に正確に把握するほど賢くはなく、 句読点の配置に関してはかなり厳格です。 少し練習すれば慣れていきます。 エディタの左下にコンソールセクションがあります。 ここでは、エディタからのエラーに関する詳細なメッセージを確認することができます。</p>
+
+        <h3 class="sr-only">インタラクションを含むコードサンプル</h3>
+        <p>次に、もう少しエキサイティングなスケッチに進んでみましょう。 前のサンプルを修正して、次のようにしてみてください。</p>
+
+<pre id="first-sketch3"><code class="language-javascript">
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  if (mouseIsPressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+  ellipse(mouseX, mouseY, 80, 80);
+}
+</code></pre>
+        <div class="edit_space">
+          <button id="copy_sketch3" class="copy_button">コピー</button>
+        </div>
+        <p style="margin-top: 1.5em;">このプログラムは、「400ピクセルの幅と400ピクセルの高さのキャンバスを作成し、 マウスの位置で白い円」を描き始めます。 マウスボタンが押されると、円の色が黒に変わります。 コードを実行し、マウスを動かしてクリックして、体験してみてください。
+        </p>
+
+        <img src="../../assets/img/get-started/first-sketch2.png" alt='キャンバスには、マウスの軌跡に沿って複数の円が描かれています。'/>
+      </div>
+
+      <h2 class="start-element tutorial-btn" id="next">次に何をすべきか？</h2>
+
+      <div class='info'>
+        <ul class="list_view">
+          <li> <a href="../learn/">「学ぶ」ページ</a>と<a href="../examples">「サンプル」ページ</a>をチェックしてください。</li>
+
+          <li> <a href="https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA">The Coding Train</a>と<a href="https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info">Kadenze</a>のビデオチュートリアルを見てください。</li>
+
+          <li> <a href="../reference/">リファレンス</a>を表示して、完全なドキュメントを確認してください。 </li>
+          <li>スクリーンリーダーでp5を使用したい場合は、<a href="../learn/p5-screen-reader.html">p5 with a screenreader tutorial</a>.</li>
+          <li>Processingを過去に使用したことがある場合は、<a href='Processingからp5.jsに変換する方法と、それらの間の主な違いを学ぶために、'>Processing transition tutorial</a>を読んでください。</li>
+
+        </ul>
+      </div>
+
+      <h2 class="start-element tutorial-btn" id="settingUp">自分のコンピューターにエディターを使ってp5.jsをセットアップする</h2>
+
+      <div class="info">
+        <p>コンピュータでp5.jsを実行するには、テキストエディタが必要です。あなたのお好みの
+          <a href='http://en.wikipedia.org/wiki/Source_code_editor' target="_blank">
+            コードエディタ</a>
+            を使うことができます。
+            <a href="http://www.sublimetext.com/2" target="_blank"> Sublime Text 2</a>
+            でセットアップする手順を以下に示しますが、他の良いエディタオプションには<a href='http://brackets.io/' target=_blank>Brackets</a> また、<a href='https://atom.io/' target=_blank>Atom</a>. もあります。 スクリーン・リーダー・ユーザーでp5ウェブ・エディタを使用しない場合は、これらも良いでしょう: <a href="https://notepad-plus-plus.org/">Notepad++</a> または
+            <a href="https://www.eclipse.org/ide/" target="_blank">Eclipse</a>.
+        </p>
+      </div>
+
+      <h3 class="start-element tutorial-btn" id="download">p5.jsライブラリのコピーをダウンロードする</h3>
+
+      <div class="info">
+        <p>始めるための近道は
+          <a href="../download/">p5.js complete</a>
+          をクリックしてダウンロードした空のサンプルを使用することです。
+        </p>
+
+        <p>
+          ダウンロード後、ローカルサーバーを設定する必要があります。手順は
+          <a href="https://github.com/processing/p5.js/wiki/Local-server" target="_blank">こちら</a>
+          を参照してください。ダウンロードしたフォルダ内でローカルサーバーを実行し、ブラウザでこれにアクセスしてください:
+          <code>http://localhost:{your-port-num}/empty-example</code>
+        </p>
+
+        <p>index.htmlを見ると、p5.jsとリンクされていることがわかります。minified version（ページの読み込みを高速化するために圧縮されたもの）を使用する場合は、 リンクをp5.min.jsに変更してください。</p>
+
+        <pre id="markup1"><code class="language-markup">&lt;script src="../p5.min.js">&lt;/script></code></pre>
+        <div class="edit_space">
+          <button id="copy_p5_script" class="copy_button">コピー</button>
+        </div>
+      </div>
+
+      <h3 class="start-element tutorial-btn" id="hosted">ホストされたp5.jsライブラリを使用する</h3>
+      <div class="info">
+        <p>代わりに、オンラインでホストされているp5.jsファイルにリンクすることもできます。 p5.jsのすべてのバージョンはCDN（コンテンツ配信ネットワーク）に保存されています。 これらのバージョンの履歴は
+          <a target="_blank" href="https://cdn.jsdelivr.net/npm/p5/lib/">
+            p5.js CDN</a>で確認できます。この場合、リンクを以下のように変更できます。
+        </p>
+
+        <pre id="cdn-link" class='p5-replace'><code class="language-markup">&lt;script src="https://cdn.jsdelivr.net/npm/p5@[p5_version]/lib/p5.js">&lt;/script></code></pre>
+        <div class="edit_space">
+          <button id="copy_p5_link" class="copy_button">コピー</button>
+        </div>
+        <p>サンプルHTMLページは以下のようになります。</p>
+
+        <pre id="sample-html" class='p5-replace'><code class="language-markup">
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;script src="https://cdn.jsdelivr.net/npm/p5@[p5_version]/lib/p5.js">&lt;/script&gt;
+    &lt;script src="sketch.js">&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;main&gt;
+    &lt;/main&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+        </code></pre>
+      <div class="edit_space">
+          <button id="copy_p5_html" class="copy_button">コピー</button>
+      </div>
+      </div>
+      <h3 class="start-element tutorial-btn" id="environment">環境</h3>
+      <div class="info">
+        <p>
+          Sublimeを開き、ファイルメニューから開くを選択して、 htmlファイルとjsファイルが含まれるフォルダを選択します。 左側のサイドバーには、フォルダ名が上部に表示され、 直接下に含まれるファイルの一覧が表示されます。
+        </p>
+
+        <p>
+          sketch.jsファイルをクリックすると、 編集することができます。
+          <img src="../../assets/img/get-started/sublime2.png" alt='p5スターターコードがSublimeエディタで開かれます。"'/>
+        </p>
+
+        <p>
+          ファイルマネージャーでindex.htmlファイルをダブルクリックして開くか、 ブラウザのアドレスバーにアドレスを入力してスケッチを表示してください: <code>file:///the/file/path/to/your/html</code>
+           （またはローカルサーバーを使用してる場合: <code>http://localhost:{your-port-num}/empty-example</code>
+          ）
+           
+        </p>
+      </div>
+
+      <div>このチュートリアルの一部は、Lauren McCarthy、Casey Reas、Ben Fryによる書籍「Getting Started with p5.js」（O'Reilly / Make 2015）から改変されています。 著作権は2015年に保護されており、すべての権利は保持されています。 最終的な修正はp5.js 2019貢献者会議で行われました。</div>
+
+      <script>
+        $.getJSON('/download/version.json', function(data) {
+          $('.p5-replace').each(function() {
+            var html = $(this).html().replace('[p5_version]', data.version);
+            $(this).html(html);
+          });
+        });
+      </script>
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+</div><!-- end id="get-started-page"  -->
+<script src="/../../assets/js/get-started.js"></script>
+
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

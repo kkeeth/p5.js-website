@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main >
+
+      <div class="attribution">
+      このチュートリアルは、J David Eisenbergによって執筆され、Sally Chenによって移植されました。 もしエラーがあったりコメントがあれば、<a href="https://github.com/processing/p5.js/issues"> お知らせください。</a>
+      この作品は、<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> クリエイティブ・コモンズ 表示 - 非営利 - 継承 4.0 国際 ライセンスでライセンスされています。</a>
+
+      </div>
+
+      <h1>曲線</h1>
+
+      <p>
+      この短いチュートリアルでは、p5.jsの3つのカーブタイプを紹介します: 円弧、スプライン曲線、およびベジェ曲線。
+      </p>
+
+      <h2> 円弧 </h2>
+
+      <p>
+      円弧は描画するのに最も簡単なカーブであり、楕円の一部として定義されています。次のパラメータで関数を呼び出します:
+      </p>
+
+      <p>
+      arc (x, y, w, h, start, stop, [mode])
+      </p>
+
+      <p>
+      最初の4つのパラメータ（x,y,w,h）は、円弧の境界ボックスを定義し、次の2つ（start, stop）は、円弧の開始角度と終了角度です。 これらの角度はラジアンで与えられ、0度が東を指し、PIラジアンが180°に相当します。
+      </p>
+
+      <!-- this script only needs to get added once even if there are multiple widget instances -->
+      <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+        function draw() {
+          createCanvas(150,200);
+          background(150);
+          stroke(0);
+          arc(35, 35, 50, 50, 0, PI / 2.0); // lower quarter circle
+          arc(105, 35, 50, 50, -PI, 0, CHORD);  // upper half of circle
+          arc(175, 35, 50, 50, -PI / 6, PI / 6, PIE); // 60 degrees
+          noFill();
+          arc(105, 105, 100, 50, PI / 2, 3 * PI / 2, OPEN); // 180 degrees
+        }
+      </script>
+
+      <h2>スプライン曲線</h2>
+
+      <p>
+      円弧は良いですが、単純です。次の関数curve()では、必ずしも円弧の一部であるとは限らない曲線を描画できます。 この関数は、技術的にはロム-カトマルスプラインと呼ばれるものを描画します。 曲線を描画するには、曲線が始まる点と終わる点の(x, y)座標を指定する必要があります。 また、曲線の方向と湾曲量を決定する2つの制御点も指定する必要があります。 最初の2つと最後の2つのパラメータが曲線の制御点です。 curve()への呼び出しでは、これらのパラメータが使われます:
+      </p>
+
+      <p>
+      curve (cpx1, cpy1, x1, y1, x2, y2, cpx2, cpy2);
+      </p>
+
+      <p>
+      制御点は曲線の見た目にどのように影響しますか？
+      </p>
+
+      <p>
+        曲線の始点における接線は、制御点1と曲線の終点との間の直線に平行です。 曲線の終点における接線は、始点と制御点2との間の直線に平行です。
+      </p>
+
+      <p>
+      次の図は、曲線とその制御点がどのように曲線に影響するかを示すためにドラッグできる点を示しています:
+      </p>
+
+      <!-- iframe for the curve and dragging points -->
+      <iframe src="../../assets/learn/curves/curve_ex/embed.html" width="350" height="350">
+      </iframe>
+
+
+      <h2>連続スプライン曲線</h2>
+
+      <p>
+      単独でのcurve()はあまり魅力的ではありません。 複数の点を通る連続した曲線を描画するには、curveVertex()関数を使用した方が良いでしょう。 この関数は、beginShape()関数とendShape()関数で図形を作成しているときにのみ使用できます。 一般的な使い方では、曲線の最初の点を最初の制御点とし、曲線の最後の点を最後の制御点として使用します。
+      </p>
+
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+      let coords = [40, 40, 80, 60, 100, 100, 60, 120, 50, 150];
+
+      function setup() {
+        createCanvas(150, 200);
+      }
+
+      function draw() {
+        background(255);
+        noFill();
+        stroke(0);
+        beginShape();
+        curveVertex(40,40);
+        curveVertex(40,40);
+        curveVertex(80,60);
+        curveVertex(100,100);
+        curveVertex(60,120);
+        curveVertex(50,150);
+        curveVertex(50,150);
+        endShape();
+
+         for (let i = 0; i < coords.length; i+= 2){
+          ellipse(coords[i], coords[i+1], 10, 10);
+         }
+      }
+      </script>
+
+      <h2>ベジェ曲線</h2>
+
+      <p>
+        スプライン曲線は円弧よりも優れていますが、芸術的な印象を与える流麗で滑らかな曲線はありません。 そういった曲線を描画するには、bezier()関数を使ってベジェ曲線を描画する必要があります。 スプライン曲線と同様に、bezier()関数には8つのパラメータがありますが、順序が異なります。 最初の2つと最後の2つのパラメータは開始点と終了点であり、中間の4つの点が制御点です。
+      </p>
+
+      <p> bezier(x1, y1, cpx1, cpy1, cpx2, cpy2, x2, y2); </p>
+
+      <!-- iframe of Bezier example -->
+      <iframe src="../../assets/learn/curves/bezier/embed.html" width="400" height="400">
+      </iframe>
+
+      <p>
+      制御点がcurve()にどのように影響するかを視覚化することは難しいですが、制御点がベジェ曲線にどのように影響するかを見るのは少し容易です。 2本のポールといくつかのゴムバンドを想像してください。 ポールは制御点を曲線の端点に接続します。ゴムバンドはポールの上部を接続します。 さらに2本のゴムバンドがポールの中間点を最初のゴムバンドの中間点に接続します。 もう1本のゴムバンドがそれらの中間点を接続します。 その最後のゴムバンドの中心は曲線に結ばれています。 この図は説明に役立ち、点を移動させることで曲線を変更できます。
+    </p>
+
+      <!-- image of bezier with lines -->
+      <img src="../../assets/learn/curves/bezier_with_lines/bezier_with_lines.png" style="width:150px;">
+
+      <h2> 連続ベジェ曲線</h2>
+
+      <p>
+      curveVertex()が連続スプライン曲線を作成するのを可能にするように、bezierVertex()を使用すると連続ベジェ曲線を作成できます。 再び、beginShape() / endShape()のシーケンス内である必要があります。 vertex(startX, startY)を使って曲線の開始アンカーポイントを指定する必要があります。 次のポイントは、次のような呼び出しで指定されます:
+      </P>
+
+      <p>bezierVertex(cpx1, cpy1, cpx2, cpy2, x, y);</P>
+
+      <p>
+      これは連続ベジェ曲線ですが、滑らかにはつながっていません。 曲線AとBを滑らかに連続させるためには、Aの最後の制御点、Aの最後の点、およびBの最初の制御点が直線上になければなりません。
+      </P>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+      function setup() {
+        createCanvas(150,200);
+      }
+
+      function draw() {
+        background(255);
+        noFill();
+        stroke(0);
+        beginShape();
+        vertex(30, 70); // first point
+        bezierVertex(25, 25, 100, 50, 50, 100);
+        bezierVertex(50, 140, 75, 140, 120, 120); // if first 2 numbers are changed to 20, 130 it becomes continuous
+        endShape();
+
+        ellipse(25, 25, 5, 5);
+        ellipse(100, 50, 5, 5);
+        ellipse(50, 140, 5, 5);//change to (20, 130, 5, 5) to reflect control point
+        ellipse(75, 140, 5, 5);
+      }
+      </script>
+
+      <h2>まとめ</h2>
+        <p>
+          <ul class="list_view">
+            <li>円や楕円の一部が必要な場合は、arc()を使用します。連続した円弧を作成したり、図形の一部として使用することはできません。</li>
+            <li>2点間の小さな曲線が必要な場合は、curve()を使用します。 図形の一部として連続した曲線のシリーズを作成するには、curveVertex()を使用します。</li>
+            <li>長くて滑らかな曲線が必要な場合は、bezier()を使用します。 図形の一部として連続したベジェ曲線のシリーズを作成するには、bezierVertex()を使用します。</li>
+          </ul>
+        </p>
+
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

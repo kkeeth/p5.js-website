@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<style>
+  .methodsList {
+    font-family: monospace;
+  }
+
+  .additionalInformation {
+    width: 100%;
+    background-color: #dedeff;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc h3 {
+    margin-top: 15px;
+  }
+
+  .indexList {
+    padding: 15px;
+    background-color: whitesmoke;
+  }
+</style>
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main>
+      <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+      <h1>WebGLでカスタムジオメトリを作成する</h1>
+
+      <p>p5.jsには<a class="code">box()</a>や<a class="code">sphere()</a>などの基本的な形状がいくつかありますが、p5.jsは3Dモデルファイルやコードから複雑なカスタムジオメトリをレンダリングすることもできます。 このチュートリアルでは、p5.jsに3Dモデルをインポートする方法、およびゼロからジオメトリを作成する方法について説明します。</p>
+
+      <div class="additionalInformation">3Dをはじめて扱う方は、先にこのチュートリアルを参照してください:<a
+          href="/ja/learn/getting-started-in-webgl-coords-and-transform.html">Coordinates and
+          Transformations</a>チュートリアル。</div>
+
+      <div class="toc">
+        <h3>目次</h3>
+        <ol>
+          <li><a href="#3dModels">ファイルから3Dモデルを読み込む</a></li>
+          <li><a href="#proceduralGeometry">基本的なプロシージャルジオメトリの作成</a>
+          </li>
+          <li><a href="#conclusion">結論</a></li>
+          <li><a href="#glossary">用語集</a></li>
+        </ol>
+      </div>
+
+      <h2 id="3dModels">ファイルから3Dモデルを読み込む</h2>
+
+      <p>カスタムジオメトリは、OBJファイルまたはSTLファイルを使用してp5.jsにインポートできます。 これらのファイルは通常、Blenderなどの3Dモデリングツールで生成され、3Dシーンを構築するときにより多くの制御が可能です。 これを読み込むためには<a class="code">preload()</a>内で使用する必要がある<a class="code"
+          href="/ja/reference/#/p5/loadModel">loadModel()</a> を使用します。そうすると、 <a class="code"
+          href="/ja/reference/#/p5/model">model()</a> 関数を使って、下記の例のように使用できます。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+let teapotModel;
+
+function preload() {
+  teapotModel = loadModel('../../assets/learn/basic3d/models/teapot.obj', true);
+}
+
+function setup() {
+  createCanvas(150, 216, WEBGL);
+  debugMode();
+  describe('displays a model of a teapot using normalMaterial()');
+}
+
+function draw(){
+  background(255);
+  normalMaterial(); // For effect
+  model(teapotModel);
+}
+      </script>
+
+      <p>カスタムモデルで発生することがよくある問題は、スケーリングです。 モデルがどのように構築されているかに応じて、p5.jsで描画するとはるかに異なるサイズになる場合があり、 描画できない場合もあります。<a class="code">loadModel()</a>メソッドには、 p5.jsでうまく機能するサイズにモデルをリサイズするnormalizeパラメータが含まれています。</p>
+
+      <div class="additionalInformation">Note: 現時点では、 カラーがついたSTLファイルはサポートされていませんが、<a
+          href="/ja/learn/getting-started-in-webgl-appearance.html"> スタイリングと外観</a> チュートリアルでマテリアルやテクスチャを使って色を付ける方法について学べます。</div>
+
+      <h2 id="proceduralGeometry">基本的なプロシージャルジオメトリの作成</h2>
+
+      <p>コードを使って、プロシージャルにジオメトリを定義することもできます。 自分自身のルールに従ってジオメトリを作成する方法です。 <a class="code">quad()</a>、 <a class="code">triangle()</a>、<a class="code">rect()</a>、<a class="code">circle()</a>など、 各メソッドには3Dで使用できるようにするための追加パラメータがあります。</p>
+
+      <p>ジオメトリを制御するための別の方法があります。 <a class="code"
+          href="/ja/reference/#/p5/beginShape">beginShape()</a>, <a class="code"
+          href="/ja/reference/#/p5/vertex">vertex()</a>, と <a class="code"
+          href="/ja/reference/#/p5/endShape">endShape()</a>. というメソッドを使って、点ごとに形状を定義することができます。 次の例では、これらのメソッドを使用して、数学的に3Dシェイプを構築する方法を示します。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  describe('a red 3d spiral shape created with beginShape and endShape');
+}
+
+function draw(){
+  background(220);
+  
+  // click+drag on canvas to look around the shape
+  orbitControl();
+  
+  fill(255,0,0,128);
+    
+  var numVertices = 100;
+  translate(0,numVertices,0);
+  rotateY(millis()/1000);
+  scale(20);
+  beginShape();
+  // a simple spiral shape
+  for(let i = 0; i < numVertices; i++) {
+    vertex(
+      sin((i/numVertices*TWO_PI)*5)*sin(i/numVertices*PI)*2,
+      -i/10, 
+      cos((i/numVertices*TWO_PI)*5)*sin(i/numVertices*PI)*2,
+    );
+  }
+  endShape();
+}
+      </script>
+
+      <p>また、p5.jsは内部的に<a class="code">loadModel()</a>で使用されている <a class="code" href="/ja/reference/#/p5/p5.Geometry">p5.Geometry</a>クラスがあり、カスタムジオメトリの定義にも使用できます。 これは、面や法線を計算するための便利なツールを提供します。</p>
+
+
+
+      <p>3Dでは、面は表面を形成する3つまたは4つのポイントのコレクションを指します。 法線は、面に垂直な方向であり、p5.jsが表面全体にわたって照明を計算するのに役立ちます。</p>
+
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <img style="padding:30px; width:60%;" src='../../assets/learn/basic3d/images/normals_face_example.png'
+          alt="an illustration a collection of three points, constituting a face, and an arrow extending perpendicular to it, the normal" />
+      </div>
+
+
+      <p>次の例では、<a class="code">p5.Geometry</a>を使用して ジオメトリのグリッドをプロットしています。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+let myGeometry
+
+function setup() {
+  createCanvas(400, 400, WEBGL);
+
+  let detailX = 20;
+  let detailY = 20;
+  myGeometry = new p5.Geometry(detailX,detailY, function() {
+    
+    // these nested for loops create a simple grid of vertices
+    // which are affected by sin() and cos() on the z-axis
+    for(let x = 0; x <= detailX; x++) {
+      for(let y = 0; y <= detailY; y++) {
+        this.vertices.push(new p5.Vector(
+          x/detailX,
+          y/detailY,
+          (sin(x/detailX*TWO_PI*4) + cos(y/detailY*TWO_PI)) / 10
+          // random()/10
+        ));
+      }
+    }
+
+    // this will attach all our vertices and create faces automatically
+    this.computeFaces();
+    // this will calculate the normals to help with lighting
+    this.computeNormals();
+  });
+
+  describe('a greenish plane shape that is warped and lit');
+}
+
+function draw() {
+  background(220);
+  
+  orbitControl();
+  
+  //set a basic light to see that normals are calculated
+  pointLight(255,255,0,0,50,-50);
+  
+  push();
+  stroke(128);
+  let geoSize = width/2;
+  rotateY(cos(millis() / 1000)*PI/4);
+  translate(-geoSize/2,-geoSize/2);
+  scale(geoSize);
+  model(myGeometry);
+  pop();
+}
+      </script>
+
+      <h2 id="conclusion">結論</h2>
+
+      <p>これでカスタムジオメトリを作成できるようになりました。 他のツールやコードからユニークな形状を作成できるようになりました。 様々な3Dモデリングツールで作業を行い、あなたに最適なツールを見つけるための時間を費やしてください。</p>
+
+      <h3>その他のチュートリアル</h3>
+      <p>このチュートリアルは、p5.jsでWebGLを使用する基本についてのシリーズの一部です。以下の他のチュートリアルをすべてチェックしてください。</p>
+      <ul class="indexList">
+        <li><a href="/ja/learn/getting-started-in-webgl-coords-and-transform.html">座標と変換</a></li>
+        <li>WebGLでカスタムジオメトリの作成 (現在ここ)</li>
+        <li><a href="/ja/learn/getting-started-in-webgl-appearance.html">スタイルと外観</a></li>
+        <li><a href="/ja/learn/getting-started-in-webgl-shaders.html">シェーダー入門</a></li>
+      </ul>
+
+      <h2 id="glossary">用語集</h2>
+
+      <h3>プロシージャル</h3>
+      <p>数学的に定義されたもので、ファイルなどの保存されたデータではないことを意味します。</p>
+
+      <h3>モデル</h3>
+      <p>ジオメトリの表現方法。</p>
+
+      <h3>STL</h3>
+      <p>STL("standard tesselation language"の略)3Dモデルのファイル形式。 ジオメトリに関する情報のみを保存します。</p>
+
+      <h3>OBJ</h3>
+      <p>ジオメトリデータだけでなく、一部のマテリアルやテクスチャデータも保存するオープンなファイル形式。 p5.jsではジオメトリに限定されていますが、テクスチャを使用して表面に画像をマッピングすることができます。</p>
+
+      <h3>面</h3>
+      <p>3つの点間で生成される固体の表面。</p>
+
+      <h3>法線</h3>
+      <p>面に垂直な方向で、ライティングの計算やマテリアルの使用時に必要な方向性です。</p>
+
+      <h3>正規化</h3>
+      <p>標準範囲内に収まるように何かを変更すること。</p>
+
+
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

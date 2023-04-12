@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">libraries | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="libraries-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main id="content">
+      <h1>ライブラリ</h1>
+
+      <h2>ライブラリの使用</h2>
+
+      <p>p5.jsライブラリは、p5.jsのコア機能を拡張または追加する任意のJavaScriptコードです。ライブラリには2つのカテゴリがあります。コアライブラリ（<a
+          href="/ja/reference/#/libraries/p5.sound">p5.sound</a>）はp5.jsの配布物の一部であり、貢献ライブラリはp5.jsコミュニティのメンバーが開発、所有、および維持しています。</p>
+
+      <p>スケッチにライブラリを含めるには、p5.jsをリンクした後にHTMLファイルにリンクします。例えば、HTMLファイルは次のようになります。</p>
+      <pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html>
+&lt;head>
+  &lt;script src="p5.js"&gt;&lt;/script&gt;
+  &lt;script src="p5.sound.js"&gt;&lt;/script&gt;
+  &lt;script src="sketch.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+      </code></pre>
+
+      <h2>自分自身で作成する</h2>
+
+      <p>p5.jsは他の人からのライブラリの貢献を歓迎します！
+        <a href="https://github.com/processing/p5.js/blob/main/contributor_docs/creating_libraries.md">
+          ライブラリのチュートリアル</a>
+        をチェックして、作り方について確認してください。
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdWWb95cfvosaIFI7msA7XC5zOEVsNruaA5klN1jH95ESJVcw/viewform"
+          target="_blank">ライブラリを作成し、このページに含めたい場合は、このフォームを送信してください！</a></p>
+
+      
+      
+      <h2 class="tutorial-title">コアライブラリ</h2>
+      
+      
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="/ja/reference/#/libraries/p5.sound" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.sound.jpg">
+              <h3>p5.sound</h3>
+            </a>
+          </div>
+          <p>p5.soundは、オーディオ入力、再生、分析、合成などのWebオーディオ機能をp5に拡張したものです。 作成者:
+            <a href="https://www.jasonsigal.cc/"
+              target="_blank">Jason Sigal</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+        
+      
+      <h2 class="tutorial-title">コミュニティライブラリ</h2>
+      
+      
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://tetoki.eu/asciiart" target="_blank">
+              <img alt="" src="../../assets/img/libraries/asciiart.jpg">
+              <h3>asciiart</h3>
+            </a>
+          </div>
+          <p>p5.asciiartは、p5js用のシンプルで使いやすい画像からASCIIアートへの変換ライブラリです。 作成者:
+            <a href="https://paweljanicki.jp"
+              target="_blank">Pawel Janicki</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://c2js.org/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/c2.js.jpg">
+              <h3>c2.js</h3>
+            </a>
+          </div>
+          <p>計算幾何学、物理シミュレーション、進化アルゴリズムなどをベースにしたクリエイティブコーディング用のJavaScriptライブラリです。 作成者:
+            <a href="https://renyuan.io/"
+              target="_blank">Ren Yuan</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/OlafVal/CO2Budget.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/CO2Budget.js.jpg">
+              <h3>CO2Budget.js</h3>
+            </a>
+          </div>
+          <p>このライブラリは、p5 * jsおよびJavaScriptに関連するコーダー、デザイナー、アーティストの創造的なコミュニティにCO2-Countdownのアイデアを開放します。 作成者:
+            <a href="http://projects.olafval.de/p5-co2budget-js/"
+              target="_blank">Olaf Val</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/markroland/concaveHullJS" target="_blank">
+              <img alt="" src="../../assets/img/libraries/Concave_Hull.jpg">
+              <h3>Concave Hull</h3>
+            </a>
+          </div>
+          <p>2D空間内の点集合からConcave Hullを計算します。 作成者:
+            <a href="https://markroland.com"
+              target="_blank">Mark Roland</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jagracar/grafica.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/grafica.js.jpg">
+              <h3>grafica.js</h3>
+            </a>
+          </div>
+          <p>grafica.jsは、p5.jsスケッチにシンプルで高度に設定可能な2Dプロットを追加することができます。 作成者:
+            <a href="https://jagracar.com/p5jsSketches.php"
+              target="_blank">Javier Graciá Carpio</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/zturtledog/I_AM_UI/blob/main/I_AM_UI.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/I_AM_UI.jpg">
+              <h3>I_AM_UI</h3>
+            </a>
+          </div>
+          <p>ユーザーインターフェイスライブラリ。 作成者:
+            <a href="https://github.com/zturtledog"
+              target="_blank">sam oakes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/cvalenzuela/Mappa" target="_blank">
+              <img alt="" src="../../assets/img/libraries/mappa.jpg">
+              <h3>mappa</h3>
+            </a>
+          </div>
+          <p>Mappaは、静的地図、タイルマップ、およびジオデータを扱うためのツールセットを提供します。地理情報に基づく視覚的表現を構築する際に便利です。 作成者:
+            <a href="https://github.com/cvalenzuela/"
+              target="_blank">Cristóbal Valenzuela</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jtnimoy/marching" target="_blank">
+              <img alt="" src="../../assets/img/libraries/marching.jpg">
+              <h3>marching</h3>
+            </a>
+          </div>
+          <p>ラスタからベクターへの変換、等値面。 作成者:
+            <a href="https://jtnimoy.cc/"
+              target="_blank">JT Nimoy</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://ml5js.org/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/ml5.js.jpg">
+              <h3>ml5.js</h3>
+            </a>
+          </div>
+          <p>ml5.jsはTensorflow.jsをベースに構築され、ブラウザで機械学習アルゴリズムとモデルにフレンドリーにアクセスすることができます。 作成者:
+            <a href="https://ml5js.org/"
+              target="_blank">NYU ITP/IMA and contributors</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/nickmcintyre/numero" target="_blank">
+              <img alt="" src="../../assets/img/libraries/numero.jpg">
+              <h3>numero</h3>
+            </a>
+          </div>
+          <p>p5.js用のフレンドリーで直感的な数学ライブラリ。 作成者:
+            <a href="https://mcintyre.io"
+              target="_blank">Nick McIntyre</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/vanevery/p5LiveMedia" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5LiveMedia.jpg">
+              <h3>p5LiveMedia</h3>
+            </a>
+          </div>
+          <p>リアルタイムのオーディオ、ビデオ、キャンバス、およびデータ共有。 作成者:
+            <a href="http://www.walking-productions.com/notslop/"
+              target="_blank">Shawn Van Every</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://p5play.org" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5play.jpg">
+              <h3>p5play</h3>
+            </a>
+          </div>
+          <p>p5playは、Box2D物理エンジンを使用してインタラクティブなアートやゲームを作成するためのもので、スプライト、アニメーション、入力検出の改善などを提供します！ 作成者:
+            <a href="https://www.youtube.com/@p5play_quinton-ashley"
+              target="_blank">Quinton Ashley</a>, <a href="https://www.molleindustria.org/"
+              target="_blank">Paolo Pedercini</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.npmjs.com/package/p5snap" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5snap.jpg">
+              <h3>p5snap</h3>
+            </a>
+          </div>
+          <p>p5snapは、p5スケッチのスナップショットを一定の間隔で作成して保存するコマンドラインインターフェイスです。 作成者:
+            <a href="https://zachkrall.com"
+              target="_blank">Zach Krall</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/FreddieRa/p5.3D" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.3D.jpg">
+              <h3>p5.3D</h3>
+            </a>
+          </div>
+          <p>WebGLでの3Dテキストおよび画像。 作成者:
+            <a href="https://freddierawlins.wixsite.com/site"
+              target="_blank">Freddie Rawlins</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://wixette.github.io/p5.animS/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.animS.jpg">
+              <h3>p5.animS</h3>
+            </a>
+          </div>
+          <p>p5.jsの形状を描画するプロセスをレンダリングして、p5.animSで形状をアニメーション化します。 作成者:
+            <a href="https://github.com/wixette"
+              target="_blank">Yonggang Wang</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/peilingjiang/p5.bezier" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.bezier.jpg">
+              <h3>p5.bezier</h3>
+            </a>
+          </div>
+          <p>高次Bézier曲線を無制限の点で描画するためのライブラリです。 作成者:
+            <a href="https://www.jpl.design"
+              target="_blank">Peiling Jiang</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://itpnyu.github.io/p5ble-website/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.ble.jpg">
+              <h3>p5.ble</h3>
+            </a>
+          </div>
+          <p>p5スケッチとBLEデバイスの間で通信を可能にするJavaScriptライブラリです。 作成者:
+            <a href="https://1023.io"
+              target="_blank">Yining Shi</a>, <a href="https://www.jingwen-zhu.com/"
+              target="_blank">Jingwen Zhu</a>, <a href="https://tigoe.com/"
+              target="_blank">Tom Igoe</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/sarahgp/p5bots" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.bots.jpg">
+              <h3>p5.bots</h3>
+            </a>
+          </div>
+          <p>p5.botsを使用すると、ブラウザ内からArduino（または他のマイクロプロセッサ）と対話できます。センサーデータを使用してスケッチを駆動し、スケッチを使用してLED、モーターなどを駆動できます。 作成者:
+            <a href="http://www.sarahgp.com"
+              target="_blank">Sarah Groff-Palermo</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.nicoatek.com/js_libraries/p5.button.min.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.button.jpg">
+              <h3>p5.button</h3>
+            </a>
+          </div>
+          <p>シンプルまたはスタイル付きのボタンをp5.jsキャンバス上で直接デザインおよびレンダリングするための、小さな一機能ライブラリです。 作成者:
+            <a href="https://www.nicoatek.com/p5button"
+              target="_blank">Nicolas ATEK</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/koerismo/p5.buttons" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.buttons.jpg">
+              <h3>p5.buttons</h3>
+            </a>
+          </div>
+          <p>ボタンのスクリプトをシンプルにすることを目的としたライブラリです。 作成者:
+            <a href="https://github.com/koerismo"
+              target="_blank">Jadon L</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/tapioca24/p5.capture" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.capture.jpg">
+              <h3>p5.capture</h3>
+            </a>
+          </div>
+          <p>p5.captureは、簡単なGUIを提供し、p5.jsアニメーションを簡単に記録して、様々な形式（webm、gif、mp4、png、jpg、webp）の動画ファイルを出力することができます。 作成者:
+            <a href="https://github.com/tapioca24"
+              target="_blank">tapioca24</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Lartu/p5.clickable" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.clickable.jpg">
+              <h3>p5.clickable</h3>
+            </a>
+          </div>
+          <p>イベント駆動型で、使いやすいp5.js用のボタンライブラリです。 作成者:
+            <a href="https://www.lartu.net"
+              target="_blank">Martín del Río</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jtnimoy/p5.cmyk.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.cmyk.js.jpg">
+              <h3>p5.cmyk.js</h3>
+            </a>
+          </div>
+          <p>CMYKカラースペース 作成者:
+            <a href="https://jtnimoy.cc/"
+              target="_blank">JT Nimoy</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.collide2D" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.collide2D.jpg">
+              <h3>p5.collide2D</h3>
+            </a>
+          </div>
+          <p>p5.collide2Dは、p5.jsを使用した2Dジオメトリの衝突検出計算用のツールを提供します。 作成者:
+            <a href="https://www.benmoren.com/"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/zachmohammed/P5.Create" target="_blank">
+              <img alt="" src="../../assets/img/libraries/P5.Create.jpg">
+              <h3>P5.Create</h3>
+            </a>
+          </div>
+          <p>効率的なゲーム作成のために設計された、保存、アニメーション、衝突、およびタグ機能を提供するライブラリです。 作成者:
+            <a href="https://github.com/zachmohammed"
+              target="_blank">Zach Mohammed</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://www.npmjs.com/package/p5.createloop" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.createloop.jpg">
+              <h3>p5.createloop</h3>
+            </a>
+          </div>
+          <p>1行のコードでノイズとGIFエクスポートを使用したアニメーションループを作成できます。 作成者:
+            <a href="https://www.piratesjustar.com/"
+              target="_blank">Peter Hayman</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Smilebags/p5.dimensions.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.dimensions.jpg">
+              <h3>p5.dimensions</h3>
+            </a>
+          </div>
+          <p>p5.dimensionsは、p5.jsのベクトル機能を任意の次元で使用できるように拡張します。 作成者:
+            <a href="https://github.com/Smilebags"
+              target="_blank">Smilebags</a>, <a href="https://github.com/max0410"
+              target="_blank">Max Segal</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/freshfork/p5.EasyCam" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.EasyCam.jpg">
+              <h3>p5.EasyCam</h3>
+            </a>
+          </div>
+          <p>慣性パン、ズーム、回転を備えたシンプルな3Dカメラ制御です。 Thomas Diewaldによる重要な貢献。 作成者:
+            <a href="https://jwilliamdunn.com"
+              target="_blank">jWilliam Dunn</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/loneboarder/p5.experience.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.experience.jpg">
+              <h3>p5.experience</h3>
+            </a>
+          </div>
+          <p>p5.js用の拡張ライブラリで、キャンバスベースのWebアプリケーションを作成するための追加のイベントリスニング機能を追加します。 作成者:
+            <a href="https://github.com/loneboarder"
+              target="_blank">Felix Meichelböck</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/machineagency/p5.fab" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.fab.jpg">
+              <h3>p5.fab</h3>
+            </a>
+          </div>
+          <p>p5.fabは、p5.jsからデジタルファブリケーションマシンを制御します。 作成者:
+            <a href="https://blairsubbaraman.com/"
+              target="_blank">Blair Subbaraman</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/davepagurek/p5.Framebuffer" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.Framebuffer.jpg">
+              <h3>p5.Framebuffer</h3>
+            </a>
+          </div>
+          <p>WebGLの高速オフスクリーンキャンバスで、フォグやぼかし効果のための深度データにアクセスできます。 作成者:
+            <a href="https://www.davepagurek.com/"
+              target="_blank">Dave Pagurek</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://idmnyu.github.io/p5.js-func" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.func.jpg">
+              <h3>p5.func</h3>
+            </a>
+          </div>
+          <p>p5.funcは、時間、周波数、および空間領域での関数生成に新しいオブジェクトとユーティリティを提供するp5拡張機能です。 作成者:
+            <a href="https://lukedubois.com/"
+              target="_blank">R. Luke DuBois</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.geolocation" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.geolocation.jpg">
+              <h3>p5.geolocation</h3>
+            </a>
+          </div>
+          <p>p5.geolocationは、p5.jsでユーザーの位置情報を取得、監視、計算、およびジオフェンスするための技術を提供します。 作成者:
+            <a href="https://www.benmoren.com/"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://charlie-roberts.com/gibber/p5-gibber/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.gibber.jpg">
+              <h3>p5.gibber</h3>
+            </a>
+          </div>
+          <p>p5.gibberは、迅速な音楽シーケンシングとオーディオシンセシス機能を提供します。 作成者:
+            <a href="https://charlie-roberts.com"
+              target="_blank">Charlie Roberts</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://p5.glitch.me/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.glitch.jpg">
+              <h3>p5.glitch</h3>
+            </a>
+          </div>
+          <p>p5.glitchは、画像やバイナリファイルをグリッチ効果を加えるためにp5.jsを拡張します。 作成者:
+            <a href="https://teddavis.org"
+              target="_blank">Ted Davis</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Buggem/processing.input/blob/main/p5.input.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.input.jpg">
+              <h3>p5.input</h3>
+            </a>
+          </div>
+          <p>p5.jsに追加のキー対応を追加します。 作成者:
+            <a href="https://github.com/Buggem/"
+              target="_blank">Max Parry</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bitcraftlab/p5.gui" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.gui.jpg">
+              <h3>p5.gui</h3>
+            </a>
+          </div>
+          <p>p5.guiは、p5.jsスケッチのためにグラフィカルユーザーインターフェイスを生成します。 作成者:
+            <a href="https://www.bitcraftlab.com/"
+              target="_blank">Martin Schneider</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/monteslu/p5.j5" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.j5.jpg">
+              <h3>p5.j5</h3>
+            </a>
+          </div>
+          <p>Arduinoやその他のマイクロコントローラー用の完全なJohnny-Five.io Nodebots /ロボティクスライブラリであり、WebSerialまたはWebUSBを使用して直接ブラウザで動作するように作られています。 作成者:
+            <a href="https://twitter.com/monteslu"
+              target="_blank">Luis Montes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://microsoft.github.io/jacdac-docs/clients/javascript/p5js/ " target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.jacdac.jpg">
+              <h3>p5.jacdac</h3>
+            </a>
+          </div>
+          <p>p5js用のプラグアンドプレイマイクロコントローラ。 作成者:
+            <a href="https://twitter.com/pelikhan"
+              target="_blank">Jonathan de Halleux</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Vamoss/p5.joystick" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.joystick.jpg">
+              <h3>p5.joystick</h3>
+            </a>
+          </div>
+          <p>物理的なジョイスティックを接続して遊ぶためのライブラリです。 作成者:
+            <a href="https://vamoss.com.br"
+              target="_blank">Vamoss</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bmoren/p5.localmessage" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.localmessage.jpg">
+              <h3>p5.localmessage</h3>
+            </a>
+          </div>
+          <p>p5.localmessageは、簡単なインターフェイスを提供して、別のスケッチからローカルにメッセージを送信し、簡単なマルチウィンドウスケッチを作成できます！ 作成者:
+            <a href="https://benmoren.com"
+              target="_blank">Ben Moren</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jdeboi/p5.mapper" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.mapper.jpg">
+              <h3>p5.mapper</h3>
+            </a>
+          </div>
+          <p>p5.mapperは、p5.js用の投影マッピングライブラリで、インタラクティブでアルゴリズミックなスケッチを簡単にコーディングすることができます。 作成者:
+            <a href="https://jdeboi.com/"
+              target="_blank">Jenna deBoisblanc</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://editor.p5js.org/bharathsatheesan7a/sketches/NHvinWyye" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.math.js.jpg">
+              <h3>p5.math.js</h3>
+            </a>
+          </div>
+          <p>JavaScriptの数学演算は、非常にわかりやすくなるように、人間が理解しやすい言語に変換されています。 作成者:
+            <a href="https://github.com/bharathsatheesan"
+              target="_blank">Bharath Satheesan</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bobcgausa/cook-js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.particle.jpg">
+              <h3>p5.particle</h3>
+            </a>
+          </div>
+          <p>ParticleとFountainオブジェクトは、ユーザー構造体またはJSON入力とユーザー描画関数を通じて定義されたデータ駆動型エフェクトを作成するために使用できます。 作成者:
+            <a href="http://professorcook.org/"
+              target="_blank">Robert Cook</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/jbakse/p5.party" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.party.jpg">
+              <h3>p5.party</h3>
+            </a>
+          </div>
+          <p>p5.partyは、ネットワーク化されたマルチユーザーゲーム、アプリ、スケッチを簡単に作成するためのライブラリです。 作成者:
+            <a href="http://justinbakse.com"
+              target="_blank">Justin Bakse</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/antiboredom/p5.patgrad" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.PatGrad.jpg">
+              <h3>p5.PatGrad</h3>
+            </a>
+          </div>
+          <p>p5.PatGradを使用すると、スケッチにパターンやグラデーションを追加できます。 作成者:
+            <a href="https://lav.io"
+              target="_blank">Sam Lavigne</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/SYM380/p5.pattern" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.pattern.jpg">
+              <h3>p5.pattern</h3>
+            </a>
+          </div>
+          <p>p5.js用のパターン描画ライブラリ。 作成者:
+            <a href="https://twitter.com/hyappy717"
+              target="_blank">Taichi Sayama</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/liz-peng/p5.Polar" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.Polar.jpg">
+              <h3>p5.Polar</h3>
+            </a>
+          </div>
+          <p>p5.Polarは、美しいカレイドスコープ的な放射状のパターンを作成するための数学的抽象化を提供します。 作成者:
+            <a href="https://github.com/liz-peng"
+              target="_blank">Liz Peng</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://osresearch.github.io/p5.projection/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.projection.jpg">
+              <h3>p5.projection</h3>
+            </a>
+          </div>
+          <p>スケッチを現実世界の表面に簡単に投影マッピングすることができます。 作成者:
+            <a href="https://trmm.net/"
+              target="_blank">Trammell Hudson</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://objetos.github.io/p5.quadrille.js/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.quadrille.js.jpg">
+              <h3>p5.quadrille.js</h3>
+            </a>
+          </div>
+          <p>p5.jsの四角形ライブラリ。 作成者:
+            <a href="https://github.com/nakednous"
+              target="_blank">Jean Pierre Charalambos</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/doriclaudino/p5.recorder" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.recorder.jpg">
+              <h3>p5.recorder</h3>
+            </a>
+          </div>
+          <p>スケッチキャンバスとオーディオを記録します。 作成者:
+            <a href="https://github.com/doriclaudino"
+              target="_blank">Dori Claudino</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://antiboredom.github.io/p5.riso" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.Riso.jpg">
+              <h3>p5.Riso</h3>
+            </a>
+          </div>
+          <p>p5.Risoは、Risograph印刷に適したファイルを生成するためのライブラリです。 スケッチをマルチカラーの印刷物に変換するのに役立ちます。 作成者:
+            <a href="https://lav.io/"
+              target="_blank">Sam Lavigne</a>, <a href="https://tegabrain.com/"
+              target="_blank">Tega Brain</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/mveteanu/p5.SceneManager" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.scenemanager.jpg">
+              <h3>p5.scenemanager</h3>
+            </a>
+          </div>
+          <p>p5.SceneManagerを使用すると、複数の状態/シーンを持つスケッチを作成できます。 各シーンは、メインスケッチ内のスケッチのようなものです。 作成者:
+            <a href="https://github.com/mveteanu/"
+              target="_blank">Marian Veteanu</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/bohnacker/p5js-screenPosition" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.screenPosition.jpg">
+              <h3>p5.screenPosition</h3>
+            </a>
+          </div>
+          <p>ProcessingのscreenXおよびscreenY機能をP5jsに追加します。 作成者:
+            <a href="https://hartmut-bohnacker.de/"
+              target="_blank">Hartmut Bohnacker</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/generative-light/p5.scribble.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.scribble.jpg">
+              <h3>p5.scribble</h3>
+            </a>
+          </div>
+          <p>スケッチ風の2Dプリミティブを描画します。 Janneck Wullschlegerによって作成され、元のProcessingライブラリのポートを基にしています。 作成者:
+            <a href="https://github.com/gicentre/handy"
+              target="_blank">handy</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/vanevery/p5.serialport" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.serialport.jpg">
+              <h3>p5.serialport</h3>
+            </a>
+          </div>
+          <p>p5.serialportを使用すると、シリアル（RS-232）をサポートするデバイスとブラウザで実行されるp5スケッチとの間でシリアル通信を可能にします。 作成者:
+            <a href="https://www.walking-productions.com/notslop/abou/"
+              target="_blank">Shawn Van Every</a>, <a href="https://kaganjd.github.io/portfolio/"
+              target="_blank">Jen Kagan</a>, <a href="https://tigoe.net/"
+              target="_blank">Tom Igoe</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/gaba5/p5.shape.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.shape.js.jpg">
+              <h3>p5.shape.js</h3>
+            </a>
+          </div>
+          <p>p5.jsフレームワークにより簡単な形状を追加するために作成されたライブラリです。 作成者:
+            <a href="https://github.com/gaba5"
+              target="_blank">Sebastien Lorentz</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/GarrettMFlynn/p5.js-slides" target="_blank">
+              <img alt="" src="../../assets/img/libraries/P5.slides.jpg">
+              <h3>P5.slides</h3>
+            </a>
+          </div>
+          <p>p5.slidesはp5.jsで書かれたプレゼンテーションプラットフォームです。 作成者:
+            <a href="http://garrettflynn.com/"
+              target="_blank">Garrett Flynn</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://idmnyu.github.io/p5.js-speech/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.speech.jpg">
+              <h3>p5.speech</h3>
+            </a>
+          </div>
+          <p>p5.speechは、Web SpeechおよびSpeech Recognition APIに簡単かつ明確なアクセスを提供し、話すことができるスケッチの簡単な作成を可能にします。 作成者:
+            <a href="https://lukedubois.com/"
+              target="_blank">R. Luke DuBois</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/eltapir/p5.start2d.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.start2d.js.jpg">
+              <h3>p5.start2d.js</h3>
+            </a>
+          </div>
+          <p>px、mm、cm、またはインチを使用した2D静的アートのためのp5拡張 作成者:
+            <a href="https://github.com/eltapir"
+              target="_blank">Kris HEYSE</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/two-ticks/p5.teach.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.teach.jpg">
+              <h3>p5.teach</h3>
+            </a>
+          </div>
+          <p>p5.js用の初心者向けの数学アニメーションライブラリで、Nick McIntyreとJithin KSからのメンターシップで作成されました。 作成者:
+            <a href="https://www.linkedin.com/in/aditya-siddheshwar/"
+              target="_blank">Aditya Siddheshwar</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/linux-man/p5.tiledmap" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.tiledmap.jpg">
+              <h3>p5.tiledmap</h3>
+            </a>
+          </div>
+          <p>p5.tiledmapは、スケッチにマップを含めるための描画およびヘルパー関数を提供します。 作成者:
+            <a href="https://softlab.pt/"
+              target="_blank">Caldas Lopes</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/scottkildall/p5.timer" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.timer.jpg">
+              <h3>p5.timer</h3>
+            </a>
+          </div>
+          <p>このライブラリは、カウントダウン、ワンショットタイマー、%経過時間などの非同期タイミング機能を実行し、millis()関数およびその他の関連する計算をカプセル化して、コードを混雑させることがよくある問題を解決します。 作成者:
+            <a href="https://www.kildall.com"
+              target="_blank">Scott Kildall</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/L05/p5.touchgui" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.touchgui.jpg">
+              <h3>p5.touchgui</h3>
+            </a>
+          </div>
+          <p>p5.js用のマルチタッチおよびマウスGUIライブラリ。 作成者:
+            <a href="https://L05.is"
+              target="_blank">Carlos L05 Garcia</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Milchreis/p5.tween" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.tween.jpg">
+              <h3>p5.tween</h3>
+            </a>
+          </div>
+          <p>p5.tweenを使用すると、オブジェクトや形状のトゥイーンとして簡単にアニメーションを作成できます。 作成者:
+            <a href="https://github.com/Milchreis"
+              target="_blank">Nick Müller</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/alptugan/p5.utils" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.utils.jpg">
+              <h3>p5.utils</h3>
+            </a>
+          </div>
+          <p>私のクリエイティブコーディングクラス向けのユーティリティと追加機能で、学生が助けを得ることを目的としています。 作成者:
+            <a href="https://www.alptugan.com"
+              target="_blank">ALP TUĞAN</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/calebfoss/p5.videorecorder" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.videorecorder.jpg">
+              <h3>p5.videorecorder</h3>
+            </a>
+          </div>
+          <p>音声付きのキャンバスをビデオファイルとして記録することができます。 作成者:
+            <a href="https://www.calebfoss.com/"
+              target="_blank">Caleb Foss</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Dozed12/p5.voronoi" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.voronoi.jpg">
+              <h3>p5.voronoi</h3>
+            </a>
+          </div>
+          <p>p5.voronoiは、p5.jsスケッチでvoronoi図を描画および利用するためのツールセットを提供します。 作成者:
+            <a href="https://github.com/Dozed12"
+              target="_blank">Francisco Moreira</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/limzykenneth/p5.wasm" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.wasm.jpg">
+              <h3>p5.wasm</h3>
+            </a>
+          </div>
+          <p>p5.wasmは、Rustで書かれ、WebAssemblyにコンパイルされたアドオンライブラリであり、p5.jsでよく使われる関数を実装しています。 作成者:
+            <a href="https://github.com/limzykenneth"
+              target="_blank">Kenneth Lim</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/ars2062/p5-wasm" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.wasm.core.jpg">
+              <h3>p5.wasm.core</h3>
+            </a>
+          </div>
+          <p>p5.js用のWeb Assemblyコア。 作成者:
+            <a href="https://github.com/ars2062"
+              target="_blank">Arshia Moghaddam</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/gohai/p5.webserial/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.webserial.jpg">
+              <h3>p5.webserial</h3>
+            </a>
+          </div>
+          <p>Web Serial API（ChromeとEdgeで利用可能）に基づいてブラウザ内からシリアルデバイスとやり取りするためのライブラリです。 作成者:
+            <a href="https://github.com/gohai/"
+              target="_blank">Gottfried Haider</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/ongzzzzzz/p5.web-serial" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.web-serial.jpg">
+              <h3>p5.web-serial</h3>
+            </a>
+          </div>
+          <p>セットアップ不要のArduinoなどのデバイスにアクセスするためのWeb Serial APIを使用するためのp5.jsライブラリです。 作成者:
+            <a href="https://ongzz.ml"
+              target="_blank">Ong Zhi Zheng</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://p5xr.org/#/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/p5.xr.jpg">
+              <h3>p5.xr</h3>
+            </a>
+          </div>
+          <p>p5でVRおよびARスケッチを作成するためのライブラリです。 作成者:
+            <a href="https://www.stalgiagrigg.name/"
+              target="_blank">Stalgia Grigg</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/phywand/pdl-library/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/pdl.library.jpg">
+              <h3>pdl.library</h3>
+            </a>
+          </div>
+          <p>物理学の教育や学習のために対話的な図を作成するための関数やクラスのセットです。 作成者:
+            <a href="https://slowthinkingphysics.net"
+              target="_blank">Ian Lawrence</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/Gherciu/react-p5" target="_blank">
+              <img alt="" src="../../assets/img/libraries/react-p5.jpg">
+              <h3>react-p5</h3>
+            </a>
+          </div>
+          <p>このライブラリを使用すると、p5スケッチをReactアプリに統合できます。 作成者:
+            <a href="https://gherciu.github.io/"
+              target="_blank">Gherciu Gheorghe</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://rednoise.org/rita" target="_blank">
+              <img alt="" src="../../assets/img/libraries/rita.js.jpg">
+              <h3>rita.js</h3>
+            </a>
+          </div>
+          <p>RiTa.jsは、生成的文学のための自然言語処理オブジェクトセットを提供します。 作成者:
+            <a href="https://rednoise.org/daniel"
+              target="_blank">Daniel C. Howe</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://codeforartists.com/RotatingKnobMaker" target="_blank">
+              <img alt="" src="../../assets/img/libraries/Rotating_knobs.jpg">
+              <h3>Rotating knobs</h3>
+            </a>
+          </div>
+          <p>カスタムグラフィックと値の範囲を回転できるノブを作成します。 作成者:
+            <a href="https://codeforartists.com"
+              target="_blank">Miles DeCoster</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/pfe1223/Shape5js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/Shape5.jpg">
+              <h3>Shape5</h3>
+            </a>
+          </div>
+          <p>Shape5は、コーディングを初めて学ぶ小学生向けの2Dプリミティブライブラリです。 作成者:
+            <a href="https://github.com/pfe1223"
+              target="_blank">Patrick Ester</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://github.com/makeyourownalgorithmicart/simple.js/wiki" target="_blank">
+              <img alt="" src="../../assets/img/libraries/simple.js.jpg">
+              <h3>simple.js</h3>
+            </a>
+          </div>
+          <p>若い人や新しいコーダー向けのヘルパー関数とデフォルト。 作成者:
+            <a href="https://github.com/makeyourownalgorithmicart/simple.js/wiki"
+              target="_blank">Tariq Rashid</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/andrewtacon/p5.tiledplay.js" target="_blank">
+              <img alt="" src="../../assets/img/libraries/TiledPlay.jpg">
+              <h3>TiledPlay</h3>
+            </a>
+          </div>
+          <p>p5.js、p5.play.js、およびp5.tiled.jsの機能を橋渡しする小さなライブラリで、JavaScriptを使用して簡単に2Dプラットフォーマーゲームを作成できます。 作成者:
+            <a href="https://github.com/andrewtacon"
+              target="_blank">Andrew Tacon</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://www.tramontana.xyz" target="_blank">
+              <img alt="" src="../../assets/img/libraries/tramontana.jpg">
+              <h3>tramontana</h3>
+            </a>
+          </div>
+          <p>Tramontanaは、多数のデバイス（iOS、Android、tramontana Boardなど）を簡単に使用して、スケールや空間でインタラクティブな環境、インタラクティブなスペース、または単にプロトタイプの体験を作成するためのプラットフォームです。 作成者:
+            <a href="https://www.pierdr.com"
+              target="_blank">Pierluigi Dalla Rosa</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://github.com/CodeGuppyPrograms/TurtleGFX" target="_blank">
+              <img alt="" src="../../assets/img/libraries/TurtleGFX.jpg">
+              <h3>TurtleGFX</h3>
+            </a>
+          </div>
+          <p>TurtleGFXはJavaScriptでタートルグラフィックスでコードを記述することができます。教育やクリエイティブコーディングに最適です。 作成者:
+            <a href="https://codeguppy.com"
+              target="_blank">CodeGuppy</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+      
+      <div class="left-column">
+        
+          <div class="label">
+            <a class="nounderline" href="https://tetoki.eu/vida" target="_blank">
+              <img alt="" src="../../assets/img/libraries/vida.jpg">
+              <h3>vida</h3>
+            </a>
+          </div>
+          <p>Vidaは、カメラ（またはビデオ）ベースのモーション検出およびブロブ追跡機能をp5jsに追加するシンプルなライブラリです。 作成者:
+            <a href="https://paweljanicki.jp"
+              target="_blank">Pawel Janicki</a>
+          </p>
+        </div>
+        
+        
+        
+      
+        <div class="right-column">
+          
+          <div class="label">
+            <a class="nounderline" href="https://webmidijs.org/" target="_blank">
+              <img alt="" src="../../assets/img/libraries/WEBMIDI.js.jpg">
+              <h3>WEBMIDI.js</h3>
+            </a>
+          </div>
+          <p>p5から簡単にMIDIメッセージを送受信できるライブラリです。 作成者:
+            <a href="https://djip.co"
+              target="_blank">Jean-Philippe Côté</a>
+          </p>
+        </div>
+        
+        <div class="spacer"></div>
+        
+        
+        
+        
+
+
+    </main>
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

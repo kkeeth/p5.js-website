@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<style>
+  .methodsList {
+    font-family: monospace;
+    /*white-space: pre;*/
+  }
+
+  .additionalInformation {
+    width: 100%;
+    background-color: #dedeff;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc h3 {
+    margin-top: 15px;
+  }
+
+  .indexList {
+    padding: 15px;
+    background-color: whitesmoke;
+  }
+</style>
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main>
+      <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+      <iframe src="../../assets/learn/basic3d/titleExample.html" width="720" height="350">
+      </iframe>
+
+      <h1>座標と変換</h1>
+
+      <p>p5.jsは2Dグラフィックを作成する強力なツールですが、3Dグラフィックも作成できます。 このチュートリアルでは、p5.jsを使用して3Dスケッチを作成するための新しいコンセプトを紹介します。</p>
+
+      <div class="toc">
+        <h3>目次</h3>
+        <ol>
+          <li><a href="#what_is_webgl">WebGLとは？</a>
+          </li>
+          <li><a href="#coordinate_space">3D座標空間：3Dでの位置決め</a></li>
+          <li><a href="#transformations">変形：3D図形の位置とサイズ</a>
+          </li>
+          <li><a href="#order">変換の順序は重要です！</a></li>
+          <li><a href="#basic_shapes">3Dの基本形状</a>
+          </li>
+          <li><a href="#conclusion">結論</a></li>
+          <li><a href="#glossary">用語集</a></li>
+        </ol>
+      </div>
+
+      <h2 id="what_is_webgl">WebGLとは？</h2>
+
+      <p>WebGLは、Webブラウザ内で3Dグラフィックを作成するために必要なツールを提供するライブラリです。 簡単に言うと、それは我々に3Dの物体を配置して表示するためのあらゆる種類の数学的な操作を許可します。 p5.jsは、特別なWebGLモードを介してWebGLとの作業を容易にします。</p>
+
+      <p>3Dで作業することは、スケッチに動き、テクスチャ、ライティングなどが含まれる場合には特に多くの複雑さを導入します。 幸いなことに、コンピューターには、 特にピクセルや多くの空間内の多数の形状を扱う場合に重要なことが多数処理できる 特別なハードウェア、グラフィックスプロセッシングユニット（GPU）があります。</p>
+
+      <p>まず、<a class="code">createCanvas()</a>に3番目のパラメータとしてWEBGLを渡すことで、p5.jsをWebGLを使用するように設定します。</p>
+
+      <pre><code class="language-javascript">
+      function setup() {
+        createCanvas(windowWidth, windowHeight, WEBGL);
+        describe('a red box on a white background');
+      }
+
+      function draw(){
+        background(255);
+        fill(255,0,0);
+        box();
+      }
+      </code></pre>
+
+      <h2 id="coordinate_space">3D座標空間：3Dでの位置決め</h2>
+
+      <div class="additionalInformation">座標系が理解できない場合は、以下のチュートリアルを再度確認することをお勧めします。<a
+          href="/ja/learn/coordinate-system-and-shapes.html">座標系と図形</a>.</div>
+
+      <p>2Dで作業する場合との最も基本的な違いは、もっとも明らかなものです。 それは、作業するための1つの追加次元があることです。 描画の要素の水平方向と垂直方向の位置（x軸とy軸）に加えて、3Dでは深度、z軸が追加されます。</p>
+
+      <p>2Dで描画する場合、点（0,0）は画面の左上隅にあります。 WebGLモードでは、スケッチの原点（0,0,0）は画面の中央にあります。 デフォルトでは、x軸は左から右、y軸は上から下、z軸は遠くから近づく方向を指します。</p>
+
+      <img style="padding:60px;" src='../../assets/learn/basic3d/images/2d3d_coordinates.png'
+        alt="an illustration showing a 2D coordinate system on the left, showing an origin of (0,0) and a 3D coordinate system on the right, showing an origin of (0,0,0)">
+
+      <h2 id="transformations">変形：3D図形の位置とサイズ</h2>
+
+      <p>p5.jsにはいくつかのメソッドがあります:<a class="code"
+          href="/ja/reference/#/p5/translate">translate()</a>, <a class="code"
+          href="/ja/reference/#/p5/rotate">rotate()</a>, と <a class="code"
+          href="/ja/reference/#/p5/scale">scale()</a>, 。それらを使用して、オブジェクトを空間内に配置および方向付けできます。 これらの方法は、<em>モデル行列</em>として知られるものを影響します。 これらは、オブジェクトの<em>変換</em>としてまとめて扱われます。 これらのメソッドは、2Dおよび3D描画の両方で使用できます。</p>
+
+      <h3>translate(): 物体を空間内で移動させる</h3>
+
+      <iframe src="../../assets/learn/basic3d/translateExample.html" width="720" height="350">
+      </iframe>
+
+      <p><a class="code" href="/ja/reference/#/p5/translate">translate()</a> <a class="code">translate()</a>は、指定された方向に原点を移動します。 この後に描かれたものは、その点に対して相対的に位置づけられます。 <a class="code">translate()</a>は、x、y、zの値を引数として受け取ります。 上記のスケッチのスライダーを使って、ボックスの移動を変更して、各軸に沿ってどのように移動するかを見てください。 以下のコードは、<a class="code">box()</a>形状の単純な移動を示しています。</p>
+
+      <pre><code class="language-javascript">
+      ...
+      // draw a box 100 units to the right
+      translate(100,0,0);
+      box();
+      ..
+      </code></pre>
+
+      <h3>rotate(): 物体を空間内で向きを変える</h3>
+
+      <iframe src="../../assets/learn/basic3d/rotateExample.html" width="720" height="350">
+      </iframe>
+
+      <p><a class="code" href="/ja/reference/#/p5/rotate">rotate()</a> <a class="code">rotate()</a>は、 それに続くものを再配置します。</p>
+
+      <p>3D空間内でオブジェクトを回転させるために使用できるいくつかの方法があります。 ほとんどの場合、軸の周りの回転を許可するメソッド、<a class="code"
+          href="/ja/reference/#/p5/rotateX">rotateX()</a>, <a class="code"
+          href="/ja/reference/#/p5/rotateY">rotateY()</a>, 、 <a class="code"
+          href="/ja/reference/#/p5/rotateZ">rotateZ()</a> などを呼び出すのが最も簡単です。 これらの各メソッドは、回転角度を指定する単一の引数を受け入れます。 上記の例のスライダーを動かして、各軸に対する回転の実行方法を確認してください。 以下のコードは、これらの各メソッドの使用方法を示しています。</p>
+
+      <pre><code class="language-javascript">
+      ...
+      // rotate X, Y, and Z axes by 45 degrees
+      rotateX(QUARTER_PI);
+      rotateY(QUARTER_PI);
+      rotateZ(QUARTER_PI);
+      box();
+      ..
+      </code></pre>
+
+      <p>デフォルトでは、p5.jsは角度をラジアン単位で期待します。 ラジアンは、数値0〜<a class="code">TWO_PI</a>を使用して角度を指定します。 度数を使用するには、<a class="code">radians()</a>を使用して度数をラジアンに変換するか、<a class="code">angleMode(DEGREES)</a>を使用します。</p>
+
+      <pre><code class="language-javascript">
+      ...
+      // rotate each axis by 45 degrees
+      rotateX(radians(45));
+      box();
+      //or
+      angleMode(DEGREES);
+      rotateY(45);
+      box();
+      ..
+      </code></pre>
+
+      <div class="additionalInformation">
+        <p>また、2つ目の引数としてベクトルを使用することで、回転する軸を指定できる <a class="code"
+            href="/ja/reference/#/p5/rotate">rotate()</a> ことが できます。</p>
+      </div>
+
+      <h3>scale（スケール）：空間でのサイズ</h3>
+
+      <iframe src="../../assets/learn/basic3d/scaleExample.html" width="720" height="350">
+      </iframe>
+
+      <p><a class="code" href="/ja/reference/#/p5/scale">scale()</a> 描画されるもののサイズを変更します。 ここまで説明した他のメソッドと同様に、x、y、zの値の引数を受け取ります。</p>
+
+      <h2 id="order">変換の順序は重要です！</h2>
+
+      <p>変換の順序は、最初は予測不可能に感じることがあります。各変換は常に次の変換に影響します。 例えば、<a class="code">rotate()</a>の後に<a class="code">translate()</a>が呼び出された場合、その移動の方向は回転に影響されます。 全体の座標系が回転して移動しているため、形状自体だけでなく、周りの座標系も動いていることになります。</p>
+
+      <p>変換は任意の順序で実行できますが、<strong>translate</strong>、<strong>rotate</strong>、そして<strong>scale</strong>を使用すると、最も直感的になります。 移動の後に回転を行うことで、新しい位置を中心に回転する効果が得られます。</p>
+
+      <p>下の例では、<a class="code">translate()</a>と<a class="code">rotateY()</a>の順序を変更して、どのようにオブジェクトが描画されるかを確認してみてください。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+function setup() {
+  createCanvas(150, 216, WEBGL);
+  debugMode();
+  describe('a white box in front of a reference 3D axis and grid, illustrating the applied transforms');
+}
+
+function draw(){
+  background(255);
+  camera(100,-100,100);
+  
+  translate(25,0,25); 
+  rotateY(PI/3);          
+  scale(2);
+
+  box(10);
+}
+      </script>
+
+      <p>p5.jsには、変形を適用するタイミングを制御できるいくつかのメソッドがあります。<a class="code"
+          href="/ja/reference/#/p5/push">push()</a> そして、 <a class="code"
+          href="/ja/reference/#/p5/pop">pop()</a> 。<a class="code">push()</a> と <a class="code">pop()</a> は、オブジェクトを個別に移動するのを簡単にします。 <a class="code">push()</a> メソッドは現在の変形とスタイル設定を保存します。 そして、新しい変形を行った後、<a class="code">pop()</a> メソッドを使用して元の変形に戻ります。 その結果、<a class="code">push()</a> と <a class="code">pop()</a> の間で行われた変形やスタイル変更は、 コードのその部分に対してのみ分離されます。  <a class="code">push()</a> と <a class="code">pop()</a> を使用しない場合、すでに行われた変形を追跡する必要がありますが、これは複雑になり、追跡が難しくなります。 次の例を考えてみてください。この例では、スケッチに2つの箱を配置します。 2番目のボックスを<a class="code">push()</a> と <a class="code">pop()</a> を使用せずに位置に配置するには、 最初の変形を考慮する必要があります。 これは、より複雑な3Dシーンでは追跡が困難な場合があります。</p>
+
+      <pre><code class="language-javascript">
+      // draw a box 100 units to the right
+      translate(100,0,0);
+      box();
+
+      // now, to draw another box 100 units to the left
+      // since transformations accumulate, we have to
+      // subtract 200 to do this
+      translate(-200,0,0);
+      box();
+      </code></pre>
+
+      <p>これで、<a class="code">push()</a> と <a class="code">pop()</a> を使用した同じコードを試してみましょう。 これで、座標系がどこにあるかを覚える必要がなく、オブジェクトを簡単に移動できます。</p>
+
+      <pre><code class="language-javascript">
+      push(); // detach our coordinate system
+      // draw a box 100 units to the right
+      translate(100,0,0);
+      box();
+      pop(); // return to our original coordinate system
+
+      push(); // detach our coordinate system
+      // draw a box 100 units to the left
+      translate(-100,0,0);
+      box();
+      pop(); // return to our original coordinate system
+      </code></pre>
+
+      <div class="additionalInformation">
+        <p>これはもう少し高度なトピックですが、 これらの変換はそれぞれモデル行列と呼ばれるものに影響を与えます。 変換行列はビュー行列と射影行列と結合され、 どちらもカメラの視点をシミュレートするのに役立ちます。 そしてこの結合により、私たちの3Dシーンが作成されます！</p> <a href="https://developer.mozilla.org/ja/docs/Web/API/WebGL_API/WebGL_model_view_projection"> モデルビュープロジェクションについてもっと学ぶ</a>
+      </div>
+
+      <p>下の例で、<a class="code">push()</a>と<a class="code">pop()</a>を取り除いて、描かれる2番目のオブジェクトに 変換がどのように影響するかを試してみてください。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+function setup() {
+  createCanvas(150, 216, WEBGL);
+  debugMode();
+  describe('two white boxes with a number of transformations applied');
+}
+
+function draw() {
+  background(255);
+  camera(100, -100, 100);
+
+  push(); // detach our coordinate system
+  
+  // draw a box 100 units along the x-axis
+  translate(50, 0, 0);
+  rotateY(PI/4);
+  box(30);
+  pop(); // return to our original coordinate system
+
+  // draw a second box -50 units along the x-axis
+  translate(-50, 0, 0);
+  rotateY(PI/4);
+  box(30);
+}
+      </script>
+
+      <h2 id="basic_shapes">3Dの基本形状</h2>
+
+      <p>これまで<a class="code">box()</a>のみを使用していましたが、p5.jsには7つの異なる事前定義済みジオメトリがあり、 スケッチで使用できます。これらの基本的な事前定義済みジオメトリは「プリミティブ」と呼ばれることがよくあります。</p>
+
+      <img style="padding:60px;" src='../../assets/learn/basic3d/images/primitives_example.png'
+        alt="an illustration showing each of the available primitives in p5.js">
+
+      <p>これらのプリミティブ形状メソッドは次のとおりです：<a class="code"
+          href="/ja/reference/#/p5/box">box()</a>, <a class="code" href="/ja/reference/#/p5/plane">plane()</a>, 
+        <a class="code" href="/ja/reference/#/p5/sphere">sphere()</a>, 
+        <a class="code" href="/ja/reference/#/p5/ellipsoid">ellipsoid()</a>, 
+        <a class="code" href="/ja/reference/#/p5/cone">cone()</a>, 
+        <a class="code" href="/ja/reference/#/p5/cylinder">cylinder()</a>, 、 <a class="code"
+          href="/ja/reference/#/p5/torus">torus()</a>.
+      </p>
+
+      <p>カスタムジオメトリを作成することもできます。 スクラッチから作成するか、別のプログラムで作成した3Dモデルから作成することもできます。 カスタムジオメトリに関する詳細は、<a
+          href="/ja/learn/getting-started-in-webgl-custom-geometry.html">カスタムジオメトリのチュートリアル</a>.</p>
+
+      <h2 id="conclusion">結論</h2>
+
+      <p>基本的な3Dシーンの制御について、 座標空間、変換、および基本的な形状について学びました。 この後の「WebGL入門」シリーズのチュートリアルでは、 カスタムジオメトリの導入、 シーンの外観の微調整、基本的なシェーダープログラミングの導入など、 スケッチをさらに進化させるための内容が紹介されます。</p>
+
+      <h3>その他のチュートリアル</h3>
+
+      <p>このチュートリアルは、p5.jsでWebGLを使用する基本についてのシリーズの一部です。以下の他のチュートリアルをすべてチェックしてください。</p>
+
+      <ul class="indexList">
+        <li>座標と変換 (現在ここ)</li>
+        <li><a href="/ja/learn/getting-started-in-webgl-custom-geometry.html">WebGLでカスタムジオメトリの作成</a></li>
+        <li><a href="/ja/learn/getting-started-in-webgl-appearance.html">スタイルと外観</a></li>
+        <li><a href="/ja/learn/getting-started-in-webgl-shaders.html">シェーダー入門</a></li>
+      </ul>
+
+      <h2 id="glossary">用語集</h2>
+
+      <h3>GPU</h3>
+      <p>GPU（グラフィックス処理ユニット）は、 多数の演算を並列に処理できるように特化された ハードウェアであり、3Dグラフィックスに特に強力です。</p>
+
+      <h3>モデル</h3>
+      <p>ファイルに保存および読み込みできるカスタム3Dジオメトリ。</p>
+
+      <h3>マトリックス</h3>
+      <p>ジオメトリの変換に関する情報を保持できる特別な配列。</p>
+
+      <h3>カメラ</h3>
+      <p>3Dシーンの視点。</p>
+
+      <h3>変換</h3>
+      <p>スケール、回転、移動の組み合わせを指し、<em>変形</em>とも呼ばれます。</p>
+
+      <h3>頂点</h3>
+      <p>3D空間の位置x、y、zを持つ点。</p>
+
+      <h3>面</h3>
+      <p>3つの点からなる集合体で、固体の表面を作り出します。</p>
+
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

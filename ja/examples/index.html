@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">examples | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="examples-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main id="content" >
+      <h1>サンプル</h1>
+
+      <div class="column_0 column">
+      
+        <h3 name='structure' class='anchor'>構造</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="structure-comments-and-statements.html"
+            
+                data-en='Comments/Statements'
+            
+                data-ja='コメントとステートメント'
+            
+          >Comments/Statements</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-coordinates.html"
+            
+                data-en='Coordinates'
+            
+                data-ja='座標'
+            
+          >Coordinates</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-width-and-height.html"
+            
+                data-en='Width/Height'
+            
+                data-ja='Width and Height'
+            
+          >Width/Height</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-setup-and-draw.html"
+            
+                data-en='Setup/Draw'
+            
+                data-ja='Setup and Draw'
+            
+          >Setup/Draw</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-no-loop.html"
+            
+                data-en='No Loop'
+            
+                data-ja='No Loop'
+            
+          >No Loop</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-loop.html"
+            
+                data-en='Loop'
+            
+                data-ja='Loop'
+            
+          >Loop</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-redraw.html"
+            
+                data-en='Redraw'
+            
+                data-ja='Redraw'
+            
+          >Redraw</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-functions.html"
+            
+                data-en='Functions'
+            
+                data-ja='Functions'
+            
+          >Functions</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-recursion.html"
+            
+                data-en='Recursion'
+            
+                data-ja='Recursion'
+            
+          >Recursion</a><br>
+          
+        
+          <a class='js-lang example-link' href="structure-create-graphics.html"
+            
+                data-en='Create Graphics'
+            
+                data-ja='Create Graphics'
+            
+          >Create Graphics</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='form' class='anchor'>フォーム</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="form-points-and-lines.html"
+            
+                data-en='Points/Lines'
+            
+                data-ja='Points and Lines'
+            
+          >Points/Lines</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-shape-primitives.html"
+            
+                data-en='Shape Primitives'
+            
+                data-ja='Shape Primitives'
+            
+          >Shape Primitives</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-pie-chart.html"
+            
+                data-en='Pie Chart'
+            
+                data-ja='Pie Chart'
+            
+          >Pie Chart</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-regular-polygon.html"
+            
+                data-en='Regular Polygon'
+            
+                data-ja='Regular Polygon'
+            
+          >Regular Polygon</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-star.html"
+            
+                data-en='Star'
+            
+                data-ja='Star'
+            
+          >Star</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-triangle-strip.html"
+            
+                data-en='Triangle Strip'
+            
+                data-ja='Triangle Strip'
+            
+          >Triangle Strip</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-bezier.html"
+            
+                data-en='Bezier'
+            
+                data-ja='Bezier'
+            
+          >Bezier</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-3d-primitives.html"
+            
+                data-en='3D Primitives'
+            
+                data-ja='3D Primitives'
+            
+          >3D Primitives</a><br>
+          
+        
+          <a class='js-lang example-link' href="form-trig-wheels-and-pie-chart.html"
+            
+                data-en='Trig Wheels/Pie Chart'
+            
+                data-ja='Trig Wheels and Pie Chart'
+            
+          >Trig Wheels/Pie Chart</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='data' class='anchor'>データ</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="data-variables.html"
+            
+                data-en='Variables'
+            
+                data-ja='Variables'
+            
+          >Variables</a><br>
+          
+        
+          <a class='js-lang example-link' href="data-true-and-false.html"
+            
+                data-en='True/False'
+            
+                data-ja='True and False'
+            
+          >True/False</a><br>
+          
+        
+          <a class='js-lang example-link' href="data-variable-scope.html"
+            
+                data-en='Variable Scope'
+            
+                data-ja='Variable Scope'
+            
+          >Variable Scope</a><br>
+          
+        
+          <a class='js-lang example-link' href="data-numbers.html"
+            
+                data-en='Numbers'
+            
+                data-ja='Numbers'
+            
+          >Numbers</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='arrays' class='anchor'>配列</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="arrays-array.html"
+            
+                data-en='Array'
+            
+                data-ja='Array'
+            
+          >Array</a><br>
+          
+        
+          <a class='js-lang example-link' href="arrays-array-2d.html"
+            
+                data-en='Array 2D'
+            
+                data-ja='Array 2D'
+            
+          >Array 2D</a><br>
+          
+        
+          <a class='js-lang example-link' href="arrays-array-objects.html"
+            
+                data-en='Array Objects'
+            
+                data-ja='Array Objects'
+            
+          >Array Objects</a><br>
+          
+        
+          <a class='js-lang example-link' href="arrays-walk-over-2darray.html"
+            
+                data-en='Walk Over 2dArray'
+            
+                data-ja='Walk Over 2dArray'
+            
+          >Walk Over 2dArray</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='control' class='anchor'>制御</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="control-iteration.html"
+            
+                data-en='Iteration'
+            
+                data-ja='Iteration'
+            
+          >Iteration</a><br>
+          
+        
+          <a class='js-lang example-link' href="control-embedded-iteration.html"
+            
+                data-en='Embedded Iteration'
+            
+                data-ja='Embedded Iteration'
+            
+          >Embedded Iteration</a><br>
+          
+        
+          <a class='js-lang example-link' href="control-conditionals-1.html"
+            
+                data-en='Conditionals 1'
+            
+                data-ja='Conditionals 1'
+            
+          >Conditionals 1</a><br>
+          
+        
+          <a class='js-lang example-link' href="control-conditionals-2.html"
+            
+                data-en='Conditionals 2'
+            
+                data-ja='Conditionals 2'
+            
+          >Conditionals 2</a><br>
+          
+        
+          <a class='js-lang example-link' href="control-logical-operators.html"
+            
+                data-en='Logical Operators'
+            
+                data-ja='Logical Operators'
+            
+          >Logical Operators</a><br>
+          
+        
+          <a class='js-lang example-link' href="control-logical-operators-2.html"
+            
+                data-en='Logical Operators 2'
+            
+                data-ja='Logical Operators 2'
+            
+          >Logical Operators 2</a><br>
+          
+        
+          <a class='js-lang example-link' href="control-conditional-shapes.html"
+            
+                data-en='Conditional Shapes'
+            
+                data-ja='Conditional Shapes'
+            
+          >Conditional Shapes</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='image' class='anchor'>画像</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="image-load-and-display-image.html"
+            
+                data-en='Load/Display Image'
+            
+                data-ja='画像の読み込みと表示'
+            
+          >Load/Display Image</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-background-image.html"
+            
+                data-en='Background Image'
+            
+                data-ja='背景画像'
+            
+          >Background Image</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-transparency.html"
+            
+                data-en='Transparency'
+            
+                data-ja='画像の透過'
+            
+          >Transparency</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-alpha-mask.html"
+            
+                data-en='Alpha Mask'
+            
+                data-ja='アルファマスク'
+            
+          >Alpha Mask</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-create-image.html"
+            
+                data-en='Create Image'
+            
+                data-ja='画像を作成する'
+            
+          >Create Image</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-pointillism.html"
+            
+                data-en='Pointillism'
+            
+                data-ja='点描'
+            
+          >Pointillism</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-blur.html"
+            
+                data-en='Blur'
+            
+                data-ja='Blur'
+            
+          >Blur</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-edge-detection.html"
+            
+                data-en='Edge Detection'
+            
+                data-ja='Edge Detection'
+            
+          >Edge Detection</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-brightness.html"
+            
+                data-en='Brightness'
+            
+                data-ja='Brightness'
+            
+          >Brightness</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-convolution.html"
+            
+                data-en='Convolution'
+            
+                data-ja='Convolution'
+            
+          >Convolution</a><br>
+          
+        
+          <a class='js-lang example-link' href="image-copy-method.html"
+            
+                data-en='Copy() method'
+            
+                data-ja='Copy() method'
+            
+          >Copy() method</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='color' class='anchor'>色</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="color-hue.html"
+            
+                data-en='Hue'
+            
+                data-ja='Hue'
+            
+          >Hue</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-saturation.html"
+            
+                data-en='Saturation'
+            
+                data-ja='Saturation'
+            
+          >Saturation</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-brightness.html"
+            
+                data-en='Brightness'
+            
+                data-ja='Brightness'
+            
+          >Brightness</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-color-variables.html"
+            
+                data-en='Color Variables'
+            
+                data-ja='Color Variables'
+            
+          >Color Variables</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-relativity.html"
+            
+                data-en='Relativity'
+            
+                data-ja='Relativity'
+            
+          >Relativity</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-linear-gradient.html"
+            
+                data-en='Linear Gradient'
+            
+                data-ja='Linear Gradient'
+            
+          >Linear Gradient</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-radial-gradient.html"
+            
+                data-en='Radial Gradient'
+            
+                data-ja='Radial Gradient'
+            
+          >Radial Gradient</a><br>
+          
+        
+          <a class='js-lang example-link' href="color-lerp-color.html"
+            
+                data-en='Lerp Color'
+            
+                data-ja='Lerp Color'
+            
+          >Lerp Color</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='math' class='anchor'>数学</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="math-increment-decrement.html"
+            
+                data-en='Increment Decrement'
+            
+                data-ja='Increment Decrement'
+            
+          >Increment Decrement</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-operator-precedence.html"
+            
+                data-en='Operator Precedence'
+            
+                data-ja='Operator Precedence'
+            
+          >Operator Precedence</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-distance-1d.html"
+            
+                data-en='Distance 1D'
+            
+                data-ja='Distance 1D'
+            
+          >Distance 1D</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-distance-2d.html"
+            
+                data-en='Distance 2D'
+            
+                data-ja='Distance 2D'
+            
+          >Distance 2D</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-sine.html"
+            
+                data-en='Sine'
+            
+                data-ja='Sine'
+            
+          >Sine</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-sine-cosine.html"
+            
+                data-en='Sine Cosine'
+            
+                data-ja='Sine Cosine'
+            
+          >Sine Cosine</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-sine-wave.html"
+            
+                data-en='Sine Wave'
+            
+                data-ja='Sine Wave'
+            
+          >Sine Wave</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-additive-wave.html"
+            
+                data-en='Additive Wave'
+            
+                data-ja='Additive Wave'
+            
+          >Additive Wave</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-polartocartesian.html"
+            
+                data-en='PolarToCartesian'
+            
+                data-ja='PolarToCartesian'
+            
+          >PolarToCartesian</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-arctangent.html"
+            
+                data-en='Arctangent'
+            
+                data-ja='Arctangent'
+            
+          >Arctangent</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-linear-interpolation.html"
+            
+                data-en='Linear Interpolation'
+            
+                data-ja='Linear Interpolation'
+            
+          >Linear Interpolation</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-double-random.html"
+            
+                data-en='Double Random'
+            
+                data-ja='Double Random'
+            
+          >Double Random</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-random.html"
+            
+                data-en='Random'
+            
+                data-ja='Random'
+            
+          >Random</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-noise1d.html"
+            
+                data-en='Noise1D'
+            
+                data-ja='Noise1D'
+            
+          >Noise1D</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-noise-wave.html"
+            
+                data-en='Noise Wave'
+            
+                data-ja='Noise Wave'
+            
+          >Noise Wave</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-noise2d.html"
+            
+                data-en='Noise2D'
+            
+                data-ja='Noise2D'
+            
+          >Noise2D</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-noise3d.html"
+            
+                data-en='Noise3D'
+            
+                data-ja='Noise3D'
+            
+          >Noise3D</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-random-chords.html"
+            
+                data-en='Random Chords'
+            
+                data-ja='Random Chords'
+            
+          >Random Chords</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-random-gaussian.html"
+            
+                data-en='Random Gaussian'
+            
+                data-ja='Random Gaussian'
+            
+          >Random Gaussian</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-map.html"
+            
+                data-en='Map'
+            
+                data-ja='Map'
+            
+          >Map</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-graphing-2d-equations.html"
+            
+                data-en='Graphing 2D Equations'
+            
+                data-ja='Graphing 2D Equations'
+            
+          >Graphing 2D Equations</a><br>
+          
+        
+          <a class='js-lang example-link' href="math-parametric-equations.html"
+            
+                data-en='Parametric Equations'
+            
+                data-ja='Parametric Equations'
+            
+          >Parametric Equations</a><br>
+          
+        
+        </p>
+        
+          </div>
+          <div class="column_1 column">
+        
+      
+        <h3 name='simulate' class='anchor'>シミュレーション</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="simulate-forces.html"
+            
+                data-en='Forces'
+            
+                data-ja='様々な力'
+            
+          >Forces</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-particle-system.html"
+            
+                data-en='Particle System'
+            
+                data-ja='パーティクルシステム'
+            
+          >Particle System</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-flocking.html"
+            
+                data-en='Flocking'
+            
+                data-ja='Flocking'
+            
+          >Flocking</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-wolfram-ca.html"
+            
+                data-en='Wolfram CA'
+            
+                data-ja='Wolfram CA'
+            
+          >Wolfram CA</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-game-of-life.html"
+            
+                data-en='Game of Life'
+            
+                data-ja='ライフゲーム'
+            
+          >Game of Life</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-multiple-particle-systems.html"
+            
+                data-en='Multiple Particle Systems'
+            
+                data-ja='複数のパーティクルシステム'
+            
+          >Multiple Particle Systems</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-spirograph.html"
+            
+                data-en='Spirograph'
+            
+                data-ja='スパイログラフ'
+            
+          >Spirograph</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-l-systems.html"
+            
+                data-en='L-Systems'
+            
+                data-ja='Lシステム'
+            
+          >L-Systems</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-spring.html"
+            
+                data-en='Spring'
+            
+                data-ja='スプリング'
+            
+          >Spring</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-springs.html"
+            
+                data-en='Springs'
+            
+                data-ja='複数のスプリング'
+            
+          >Springs</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-soft-body.html"
+            
+                data-en='Soft Body'
+            
+                data-ja='Soft Body'
+            
+          >Soft Body</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-smokeparticles.html"
+            
+                data-en='SmokeParticles'
+            
+                data-ja='SmokeParticles'
+            
+          >SmokeParticles</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-brownian-motion.html"
+            
+                data-en='Brownian Motion'
+            
+                data-ja='Brownian Motion'
+            
+          >Brownian Motion</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-chain.html"
+            
+                data-en='Chain'
+            
+                data-ja='Chain'
+            
+          >Chain</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-snowflakes.html"
+            
+                data-en='Snowflakes'
+            
+                data-ja='Snowflakes'
+            
+          >Snowflakes</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-penrose-tiles.html"
+            
+                data-en='Penrose Tiles'
+            
+                data-ja='Penrose Tiles'
+            
+          >Penrose Tiles</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-recursive-tree.html"
+            
+                data-en='Recursive Tree'
+            
+                data-ja='Recursive Tree'
+            
+          >Recursive Tree</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-the-mandelbrot-set.html"
+            
+                data-en='The Mandelbrot Set'
+            
+                data-ja='The Mandelbrot Set'
+            
+          >The Mandelbrot Set</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-koch-curve.html"
+            
+                data-en='Koch Curve'
+            
+                data-ja='Koch Curve'
+            
+          >Koch Curve</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-bubble-sort.html"
+            
+                data-en='Bubble Sort'
+            
+                data-ja='Bubble Sort'
+            
+          >Bubble Sort</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-stepping-feet-illusion.html"
+            
+                data-en='Stepping Feet Illusion'
+            
+                data-ja='Stepping Feet Illusion'
+            
+          >Stepping Feet Illusion</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-particles.html"
+            
+                data-en='Particles'
+            
+                data-ja='Particles'
+            
+          >Particles</a><br>
+          
+        
+          <a class='js-lang example-link' href="simulate-quicksort.html"
+            
+                data-en='Quicksort'
+            
+                data-ja='Quicksort'
+            
+          >Quicksort</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='interaction' class='anchor'>インタラクション</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="interaction-tickle.html"
+            
+                data-en='Tickle'
+            
+                data-ja='Tickle'
+            
+          >Tickle</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-weight-line.html"
+            
+                data-en='Weight Line'
+            
+                data-ja='Weight Line'
+            
+          >Weight Line</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-follow-1.html"
+            
+                data-en='Follow 1'
+            
+                data-ja='Follow 1'
+            
+          >Follow 1</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-follow-2.html"
+            
+                data-en='Follow 2'
+            
+                data-ja='Follow 2'
+            
+          >Follow 2</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-follow-3.html"
+            
+                data-en='Follow 3'
+            
+                data-ja='Follow 3'
+            
+          >Follow 3</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-snake-game.html"
+            
+                data-en='Snake game'
+            
+                data-ja='Snake game'
+            
+          >Snake game</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-wavemaker.html"
+            
+                data-en='Wavemaker'
+            
+                data-ja='Wavemaker'
+            
+          >Wavemaker</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-reach-1.html"
+            
+                data-en='Reach 1'
+            
+                data-ja='Reach 1'
+            
+          >Reach 1</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-reach-2.html"
+            
+                data-en='Reach 2'
+            
+                data-ja='Reach 2'
+            
+          >Reach 2</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-reach-3.html"
+            
+                data-en='Reach 3'
+            
+                data-ja='Reach 3'
+            
+          >Reach 3</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-arduino-sensor-data-via-webjack.html"
+            
+                data-en='Arduino sensor data via WebJack'
+            
+                data-ja='Arduino sensor data via WebJack'
+            
+          >Arduino sensor data via WebJack</a><br>
+          
+        
+          <a class='js-lang example-link' href="interaction-kaleidoscope.html"
+            
+                data-en='Kaleidoscope'
+            
+                data-ja='Kaleidoscope'
+            
+          >Kaleidoscope</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='objects' class='anchor'>オブジェクト</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="objects-objects.html"
+            
+                data-en='Objects'
+            
+                data-ja='Objects'
+            
+          >Objects</a><br>
+          
+        
+          <a class='js-lang example-link' href="objects-multiple-objects.html"
+            
+                data-en='Multiple Objects'
+            
+                data-ja='Multiple Objects'
+            
+          >Multiple Objects</a><br>
+          
+        
+          <a class='js-lang example-link' href="objects-array-of-objects.html"
+            
+                data-en='Array of Objects'
+            
+                data-ja='Array of Objects'
+            
+          >Array of Objects</a><br>
+          
+        
+          <a class='js-lang example-link' href="objects-objects-2.html"
+            
+                data-en='Objects 2'
+            
+                data-ja='Objects 2'
+            
+          >Objects 2</a><br>
+          
+        
+          <a class='js-lang example-link' href="objects-inheritance.html"
+            
+                data-en='Inheritance'
+            
+                data-ja='Inheritance'
+            
+          >Inheritance</a><br>
+          
+        
+          <a class='js-lang example-link' href="objects-composite-objects.html"
+            
+                data-en='Composite Objects'
+            
+                data-ja='Composite Objects'
+            
+          >Composite Objects</a><br>
+          
+        
+          <a class='js-lang example-link' href="objects-car-instances.html"
+            
+                data-en='Car Instances'
+            
+                data-ja='Car Instances'
+            
+          >Car Instances</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='lights' class='anchor'>ライト</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="lights-directional.html"
+            
+                data-en='Directional'
+            
+                data-ja='Directional'
+            
+          >Directional</a><br>
+          
+        
+          <a class='js-lang example-link' href="lights-mixture.html"
+            
+                data-en='Mixture'
+            
+                data-ja='Mixture'
+            
+          >Mixture</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='motion' class='anchor'>モーション</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="motion-non-orthogonal-reflection.html"
+            
+                data-en='Non Orthogonal Reflection'
+            
+                data-ja='Non Orthogonal Reflection'
+            
+          >Non Orthogonal Reflection</a><br>
+          
+        
+          <a class='js-lang example-link' href="motion-linear.html"
+            
+                data-en='Linear'
+            
+                data-ja='Linear'
+            
+          >Linear</a><br>
+          
+        
+          <a class='js-lang example-link' href="motion-bounce.html"
+            
+                data-en='Bounce'
+            
+                data-ja='Bounce'
+            
+          >Bounce</a><br>
+          
+        
+          <a class='js-lang example-link' href="motion-bouncy-bubbles.html"
+            
+                data-en='Bouncy Bubbles'
+            
+                data-ja='Bouncy Bubbles'
+            
+          >Bouncy Bubbles</a><br>
+          
+        
+          <a class='js-lang example-link' href="motion-morph.html"
+            
+                data-en='Morph'
+            
+                data-ja='Morph'
+            
+          >Morph</a><br>
+          
+        
+          <a class='js-lang example-link' href="motion-moving-on-curves.html"
+            
+                data-en='Moving On Curves'
+            
+                data-ja='Moving On Curves'
+            
+          >Moving On Curves</a><br>
+          
+        
+          <a class='js-lang example-link' href="motion-circle-collision.html"
+            
+                data-en='Circle Collision'
+            
+                data-ja='Circle Collision'
+            
+          >Circle Collision</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='instance_mode' class='anchor'>インスタンスモード</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="instance-mode-instantiation.html"
+            
+                data-en='Instantiation'
+            
+                data-ja='Instantiation'
+            
+          >Instantiation</a><br>
+          
+        
+          <a class='js-lang example-link' href="instance-mode-instance-container.html"
+            
+                data-en='Instance Container'
+            
+                data-ja='Instance Container'
+            
+          >Instance Container</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='dom' class='anchor'>DOM</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="dom-input-and-button.html"
+            
+                data-en='Input/Button'
+            
+                data-ja='Input and Button'
+            
+          >Input/Button</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-slider.html"
+            
+                data-en='Slider'
+            
+                data-ja='Slider'
+            
+          >Slider</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-modifying-the-dom.html"
+            
+                data-en='Modifying the DOM'
+            
+                data-ja='Modifying the DOM'
+            
+          >Modifying the DOM</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-video.html"
+            
+                data-en='Video'
+            
+                data-ja='Video'
+            
+          >Video</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-video-canvas.html"
+            
+                data-en='Video Canvas'
+            
+                data-ja='Video Canvas'
+            
+          >Video Canvas</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-video-pixels.html"
+            
+                data-en='Video Pixels'
+            
+                data-ja='Video Pixels'
+            
+          >Video Pixels</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-video-capture.html"
+            
+                data-en='Video Capture'
+            
+                data-ja='Video Capture'
+            
+          >Video Capture</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-drop.html"
+            
+                data-en='Drop'
+            
+                data-ja='Drop'
+            
+          >Drop</a><br>
+          
+        
+          <a class='js-lang example-link' href="dom-dom-form-elements.html"
+            
+                data-en='DOM Form Elements'
+            
+                data-ja='DOM Form Elements'
+            
+          >DOM Form Elements</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='drawing' class='anchor'>描画</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="drawing-continuous-lines.html"
+            
+                data-en='Continuous Lines'
+            
+                data-ja='Continuous Lines'
+            
+          >Continuous Lines</a><br>
+          
+        
+          <a class='js-lang example-link' href="drawing-patterns.html"
+            
+                data-en='Patterns'
+            
+                data-ja='Patterns'
+            
+          >Patterns</a><br>
+          
+        
+          <a class='js-lang example-link' href="drawing-pulses.html"
+            
+                data-en='Pulses'
+            
+                data-ja='Pulses'
+            
+          >Pulses</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='transform' class='anchor'>変換</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="transform-translate.html"
+            
+                data-en='Translate'
+            
+                data-ja='Translate'
+            
+          >Translate</a><br>
+          
+        
+          <a class='js-lang example-link' href="transform-scale.html"
+            
+                data-en='Scale'
+            
+                data-ja='Scale'
+            
+          >Scale</a><br>
+          
+        
+          <a class='js-lang example-link' href="transform-rotate.html"
+            
+                data-en='Rotate'
+            
+                data-ja='Rotate'
+            
+          >Rotate</a><br>
+          
+        
+          <a class='js-lang example-link' href="transform-arm.html"
+            
+                data-en='Arm'
+            
+                data-ja='Arm'
+            
+          >Arm</a><br>
+          
+        
+        </p>
+        
+          </div>
+          <div class="column_2 column">
+        
+      
+        <h3 name='typography' class='anchor'>タイポグラフィ</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="typography-letters.html"
+            
+                data-en='Letters'
+            
+                data-ja='Letters'
+            
+          >Letters</a><br>
+          
+        
+          <a class='js-lang example-link' href="typography-words.html"
+            
+                data-en='Words'
+            
+                data-ja='Words'
+            
+          >Words</a><br>
+          
+        
+          <a class='js-lang example-link' href="typography-text-rotation.html"
+            
+                data-en='Text Rotation'
+            
+                data-ja='Text Rotation'
+            
+          >Text Rotation</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='3d' class='anchor'>3D</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="3d-geometries.html"
+            
+                data-en='Geometries'
+            
+                data-ja='Geometries'
+            
+          >Geometries</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-sine-cosine-in-3d.html"
+            
+                data-en='Sine Cosine in 3D'
+            
+                data-ja='Sine Cosine in 3D'
+            
+          >Sine Cosine in 3D</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-multiple-lights.html"
+            
+                data-en='Multiple Lights'
+            
+                data-ja='Multiple Lights'
+            
+          >Multiple Lights</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-materials.html"
+            
+                data-en='Materials'
+            
+                data-ja='Materials'
+            
+          >Materials</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-textures.html"
+            
+                data-en='Textures'
+            
+                data-ja='Textures'
+            
+          >Textures</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-ray-casting.html"
+            
+                data-en='Ray Casting'
+            
+                data-ja='Ray Casting'
+            
+          >Ray Casting</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-orbit-control.html"
+            
+                data-en='Orbit Control'
+            
+                data-ja='Orbit Control'
+            
+          >Orbit Control</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-basic-shader.html"
+            
+                data-en='Basic Shader'
+            
+                data-ja='Basic Shader'
+            
+          >Basic Shader</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-shader-as-a-texture.html"
+            
+                data-en='Shader as a Texture'
+            
+                data-ja='Shader as a Texture'
+            
+          >Shader as a Texture</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-passing-shader-uniforms.html"
+            
+                data-en='Passing Shader Uniforms'
+            
+                data-ja='Passing Shader Uniforms'
+            
+          >Passing Shader Uniforms</a><br>
+          
+        
+          <a class='js-lang example-link' href="3d-shader-using-webcam.html"
+            
+                data-en='Shader Using Webcam'
+            
+                data-ja='Shader Using Webcam'
+            
+          >Shader Using Webcam</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='input' class='anchor'>入力</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="input-clock.html"
+            
+                data-en='Clock'
+            
+                data-ja='Clock'
+            
+          >Clock</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-constrain.html"
+            
+                data-en='Constrain'
+            
+                data-ja='Constrain'
+            
+          >Constrain</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-easing.html"
+            
+                data-en='Easing'
+            
+                data-ja='Easing'
+            
+          >Easing</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-keyboard.html"
+            
+                data-en='Keyboard'
+            
+                data-ja='Keyboard'
+            
+          >Keyboard</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-milliseconds.html"
+            
+                data-en='Milliseconds'
+            
+                data-ja='Milliseconds'
+            
+          >Milliseconds</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-mouse-1d.html"
+            
+                data-en='Mouse 1D'
+            
+                data-ja='Mouse 1D'
+            
+          >Mouse 1D</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-mouse-2d.html"
+            
+                data-en='Mouse 2D'
+            
+                data-ja='Mouse 2D'
+            
+          >Mouse 2D</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-mouse-functions.html"
+            
+                data-en='Mouse Functions'
+            
+                data-ja='Mouse Functions'
+            
+          >Mouse Functions</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-mouse-signals.html"
+            
+                data-en='Mouse Signals'
+            
+                data-ja='Mouse Signals'
+            
+          >Mouse Signals</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-mouse-press.html"
+            
+                data-en='Mouse Press'
+            
+                data-ja='Mouse Press'
+            
+          >Mouse Press</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-rollover.html"
+            
+                data-en='Rollover'
+            
+                data-ja='Rollover'
+            
+          >Rollover</a><br>
+          
+        
+          <a class='js-lang example-link' href="input-storing-input.html"
+            
+                data-en='Storing Input'
+            
+                data-ja='Storing Input'
+            
+          >Storing Input</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='advanced_data' class='anchor'>アドバンスドデータ</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="advanced-data-load-saved-json.html"
+            
+                data-en='Load Saved JSON'
+            
+                data-ja='Load Saved JSON'
+            
+          >Load Saved JSON</a><br>
+          
+        
+          <a class='js-lang example-link' href="advanced-data-load-saved-table.html"
+            
+                data-en='Load Saved Table'
+            
+                data-ja='Load Saved Table'
+            
+          >Load Saved Table</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='sound' class='anchor'>サウンド</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="sound-load-and-play-sound.html"
+            
+                data-en='Load/Play Sound'
+            
+                data-ja='Load and Play Sound'
+            
+          >Load/Play Sound</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-preload-soundfile.html"
+            
+                data-en='Preload SoundFile'
+            
+                data-ja='Preload SoundFile'
+            
+          >Preload SoundFile</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-soundformats.html"
+            
+                data-en='soundFormats'
+            
+                data-ja='soundFormats'
+            
+          >soundFormats</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-play-mode.html"
+            
+                data-en='Play Mode'
+            
+                data-ja='Play Mode'
+            
+          >Play Mode</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-pan-sound.html"
+            
+                data-en='Pan Sound'
+            
+                data-ja='Pan Sound'
+            
+          >Pan Sound</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-sound-effect.html"
+            
+                data-en='Sound Effect'
+            
+                data-ja='Sound Effect'
+            
+          >Sound Effect</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-playback-rate.html"
+            
+                data-en='Playback Rate'
+            
+                data-ja='Playback Rate'
+            
+          >Playback Rate</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-measuring-amplitude.html"
+            
+                data-en='Measuring Amplitude'
+            
+                data-ja='Measuring Amplitude'
+            
+          >Measuring Amplitude</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-noise-drum-envelope.html"
+            
+                data-en='Noise Drum Envelope'
+            
+                data-ja='Noise Drum Envelope'
+            
+          >Noise Drum Envelope</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-note-envelope.html"
+            
+                data-en='Note Envelope'
+            
+                data-ja='Note Envelope'
+            
+          >Note Envelope</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-oscillator-frequency.html"
+            
+                data-en='Oscillator Frequency'
+            
+                data-ja='Oscillator Frequency'
+            
+          >Oscillator Frequency</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-mic-input.html"
+            
+                data-en='Mic Input'
+            
+                data-ja='Mic Input'
+            
+          >Mic Input</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-frequency-spectrum.html"
+            
+                data-en='Frequency Spectrum'
+            
+                data-ja='Frequency Spectrum'
+            
+          >Frequency Spectrum</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-mic-threshold.html"
+            
+                data-en='Mic Threshold'
+            
+                data-ja='Mic Threshold'
+            
+          >Mic Threshold</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-filter-lowpass.html"
+            
+                data-en='Filter LowPass'
+            
+                data-ja='Filter LowPass'
+            
+          >Filter LowPass</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-filter-bandpass.html"
+            
+                data-en='Filter BandPass'
+            
+                data-ja='Filter BandPass'
+            
+          >Filter BandPass</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-delay.html"
+            
+                data-en='Delay'
+            
+                data-ja='Delay'
+            
+          >Delay</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-reverb.html"
+            
+                data-en='Reverb'
+            
+                data-ja='Reverb'
+            
+          >Reverb</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-convolution-reverb.html"
+            
+                data-en='Convolution Reverb'
+            
+                data-ja='Convolution Reverb'
+            
+          >Convolution Reverb</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-record-save-audio.html"
+            
+                data-en='Record Save Audio'
+            
+                data-ja='Record Save Audio'
+            
+          >Record Save Audio</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-frequency-modulation.html"
+            
+                data-en='Frequency Modulation'
+            
+                data-ja='Frequency Modulation'
+            
+          >Frequency Modulation</a><br>
+          
+        
+          <a class='js-lang example-link' href="sound-amplitude-modulation.html"
+            
+                data-en='Amplitude Modulation'
+            
+                data-ja='Amplitude Modulation'
+            
+          >Amplitude Modulation</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='mobile' class='anchor'>モバイル</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="mobile-acceleration-ball-bounce.html"
+            
+                data-en='Acceleration Ball Bounce'
+            
+                data-ja='Acceleration Ball Bounce'
+            
+          >Acceleration Ball Bounce</a><br>
+          
+        
+          <a class='js-lang example-link' href="mobile-simple-draw.html"
+            
+                data-en='Simple Draw'
+            
+                data-ja='Simple Draw'
+            
+          >Simple Draw</a><br>
+          
+        
+          <a class='js-lang example-link' href="mobile-acceleration-color.html"
+            
+                data-en='Acceleration Color'
+            
+                data-ja='Acceleration Color'
+            
+          >Acceleration Color</a><br>
+          
+        
+          <a class='js-lang example-link' href="mobile-shake-ball-bounce.html"
+            
+                data-en='Shake Ball Bounce'
+            
+                data-ja='Shake Ball Bounce'
+            
+          >Shake Ball Bounce</a><br>
+          
+        
+          <a class='js-lang example-link' href="mobile-tilted-3d-box.html"
+            
+                data-en='Tilted 3D Box'
+            
+                data-ja='Tilted 3D Box'
+            
+          >Tilted 3D Box</a><br>
+          
+        
+        </p>
+        
+      
+        <h3 name='hello_p5' class='anchor'>Hello p5</h3>
+        <p>
+        
+          <a class='js-lang example-link' href="hello-p5-simple-shapes.html"
+            
+                data-en='Simple Shapes'
+            
+                data-ja='Simple Shapes'
+            
+          >Simple Shapes</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-interactivity-1.html"
+            
+                data-en='Interactivity 1'
+            
+                data-ja='Interactivity 1'
+            
+          >Interactivity 1</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-interactivity-2.html"
+            
+                data-en='Interactivity 2'
+            
+                data-ja='Interactivity 2'
+            
+          >Interactivity 2</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-animation.html"
+            
+                data-en='Animation'
+            
+                data-ja='Animation'
+            
+          >Animation</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-flocking.html"
+            
+                data-en='Flocking'
+            
+                data-ja='Flocking'
+            
+          >Flocking</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-weather.html"
+            
+                data-en='Weather'
+            
+                data-ja='Weather'
+            
+          >Weather</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-drawing.html"
+            
+                data-en='Drawing'
+            
+                data-ja='Drawing'
+            
+          >Drawing</a><br>
+          
+        
+          <a class='js-lang example-link' href="hello-p5-song.html"
+            
+                data-en='Song'
+            
+                data-ja='Song'
+            
+          >Song</a><br>
+          
+        
+        </p>
+        
+      
+      </div>
+
+
+    </main>
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

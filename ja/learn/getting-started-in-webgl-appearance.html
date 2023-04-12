@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<style>
+  .methodsList {
+    font-family: monospace;
+  }
+
+  .additionalInformation {
+    width: 100%;
+    background-color: #dedeff;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc h3 {
+    margin-top: 15px;
+  }
+
+  .indexList {
+    padding: 15px;
+    background-color: whitesmoke;
+  }
+</style>
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main>
+      <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+      <h1>スタイリングと外観</h1>
+
+      <p>
+        3Dでの作成は、ジオメトリ以上のものです。 カメラ、ライト、そしてマテリアルは、視覚的に興味深い3Dシーンを作成するための重要な要素です。 p5.jsには、ジオメトリの外観を変換するためのツールが多数用意されています。
+      </p>
+
+      <div class="toc">
+        <h3>目次</h3>
+        <ol>
+          <li><a href="#camera">カメラとビュー</a></li>
+          <li><a href="#lighting">ライティング</a></li>
+          <li><a href="#materials">マテリアルとテクスチャ</a></li>          
+          <li><a href="#conclusion">結論</a></li>          
+          <li><a href="#glossary">用語集</a></li>          
+        </ol>
+      </div>
+
+      <h2 id="camera">カメラとビュー</h2>
+
+      <p>カメラは、3Dシーンの本質的な部分であり、 私たちに3Dで探求したい空間や次元感を与えます。 p5.jsでは、WebGLモードはデフォルトで遠近法カメラを提供していますが、 <a class="code" href="/ja/reference/#/p5/perspective">perspective()</a> または <a
+      class="code" href="/ja/reference/#/p5/ortho">ortho()</a>.</p>
+
+      <img style="padding:60px;" src='../../assets/learn/basic3d/images/cameraTypeIllustration.png'
+        alt="an illustration showing the difference between perspective and orthographic camera types">
+
+      <p><em>透視投影カメラ</em>は、遠ざかるにつれて小さく見えるようにオブジェクトを傾けます。 一方、 <em>正射影カメラ</em>では、 ジオメトリは遠ざかるにつれて同じサイズで、消失点はありません。</p>
+
+      <iframe src="../../assets/learn/basic3d/cameraExample.html" width="720" height="350">
+      </iframe>
+
+      <p>透視投影カメラで変更できる設定の一つに、<em>視野角</em>またはFOVがあります。 これは、カメラが見ることができる角度で測定されるものです。 単純な例では、ズームのような効果が現れるように見えますが、遠くの形状がどのようにサイズ変化するかにも影響を与えます。</p>
+
+      <p>3Dでカメラを扱う際のもう1つの重要な用語は、カメラの<em>フラスタム</em>です。カメラのフラスタムとは、カメラの視野の形状であり、幾何学的な形状を表示できるピラミッド状の形状です。 フラスタムには<em>近接面と遠方面</em>が含まれます。 近接面は、ジオメトリがカメラから描画されるために最低限離れている必要がある距離を定義します。遠方面は、ジオメトリがカメラから離れることができる最大距離を定義します。 これらのそれぞれを変更することで、カメラがどれだけ近く、どれだけ遠くを見ることができるかが影響を受けます。 この選択的にジオメトリを含めるプロセスは、時々「クリッピング」と呼ばれます。</p>
+
+      <div style="display:flex; align-items:center; justify-content: center;">
+      <img style="width:50%;" src='../../assets/learn/basic3d/images/frustum_example.png'
+        alt="an illustration showing the the camera frustum in purple, the near plane represented by a 
+        yellow rectangle near the camera, and far plane as a green rectangle on the opposite end of the frustum volume.">
+      </div>
+
+      <p>カメラは<a class="code">camera()</a>に引数を渡すことで移動できますが、コードでカメラを常に移動させたり調整したりするのは面倒です。特にアイデアを試しているときには。 p5.jsには特別なカメラメソッドがあります、<a class="code"
+      href="/ja/reference/#/p5/orbitControl">orbitControl()</a>それを使って、 マウスを使ってカメラをズーム、パン、および位置決めすることができます。</p>
+
+      <p>シーンには複数のカメラがあることができますが、一度にアクティブにできるカメラは1台だけです。p5.jsのスケッチはデフォルトで1台の透視投影カメラがありますが、 <a class="code">perspective()</a>（新しいパラメーターで）または<a class="code">ortho()</a>を呼び出すことで変更できます。 <a class="code">camera()</a>は、アクティブなカメラの位置とカメラが見ている位置を変更するために使用できます。 以下のスケッチで試してみてください。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  debugMode()
+  // uncomment to change the perspective camera to orthographic
+  // ortho();
+
+  // setting initial camera position
+  camera(200,-40, 200);
+
+  describe('a 3d scene with a sphere on the bottom and box on the top');
+}
+
+function draw() {
+  background(220);
+  
+  let sphere_x = 0;
+  let sphere_y = 90;
+  let sphere_z = 0;
+  
+  let box_x = 0;
+  let box_y = -90;
+  let box_z = 0;
+  
+  // uncomment to point camera at sphere
+  // camera(
+  //   400,-40, 400, // camera position
+  //   sphere_x, sphere_y, sphere_z // position to look at
+  // );
+  
+  // uncomment to point camera at box
+  // camera(
+  //   400,-40, 400, // camera position
+  //   box_x, box_y, box_z // position to look at
+  // );
+  
+  push();
+  translate(sphere_x, sphere_y, sphere_z);
+  sphere(40,8);
+  pop();
+  
+  push();
+  translate(box_x, box_y, box_z);
+  box();
+  pop();
+}
+      </script>
+
+      <h2 id="lighting">ライティング</h2>
+
+      <p>ライティングは3Dシーンのもう1つの重要な部分です。 3Dで形状や深さを伝えるためには、光源が必要です。p5.jsには、スケッチで使用できるいくつかの異なるタイプの光があります。</p>
+
+      <dl>
+        <dt><a class="code" href="/ja/reference/#/p5/ambientLight">ambientLight()</a></dt>
+        <dd>アンビエントライトは、光の位置や方向を考慮せずに、 すべてのものを少しだけ明るく表示します。</dd>
+        <dt><a class="code" href="/ja/reference/#/p5/directionalLight">directionalLight()</a></dt>
+        <dd>ディレクショナルライトは、1つの方向から光を放射し、シーンの深さを伝えたり、 シーンに「太陽」の光が必要な場合に特に役立ちます。このメソッドは、色と方向を受け入れます。</dd>
+        <dt><a class="code" href="/ja/reference/#/p5/pointLight">pointLight()</a></dt>
+        <dd>ポイントライトは、ある1点からすべての方向に光を放射し、 電球のようなものに似ています。このメソッドは、光の色と位置を受け入れます。</dd>
+        <dt><a class="code" href="/ja/reference/#/p5/spotLight">spotLight()</a></dt>
+        <dd>スポットライトは、1点から1つの方向に光を放射します。 この光は円錐形状で放射され、その半径と集中度を調整することができます。</dd>
+        <dt><a class="code" href="/ja/reference/#/p5/noLights">noLights()</a></dt>
+        <dd>noLights()は、その後のすべてのジオメトリがライティングなしでレンダリングされるようにします。 これは、フラットでシェーディングされていないジオメトリが必要な場合に役立ちます。</dd>
+      </dl>
+
+      <p>
+        これらのライトは、<a class="code">draw()</a>の中で使用する必要があります。 最大5つのライトを同時にシーンで使用できます。これにより、さまざまで複雑な光源を持つシーンを構成することができます。 以下のインタラクティブな例でボックスをチェックしたりチェックを外したりして、ライティングがどのように組み合わせられるかを確認してください。 アクティブな光源ごとに、その位置や方向を示す視覚的なインジケータがありますが、 これらは説明のために存在することを理解してください。
+      </p>
+
+      <iframe src="../../assets/learn/basic3d/lightingExample.html" width="720" height="350">
+      </iframe>
+
+      <p>次の例では、各ライトのコメントを追加・削除して、パラメーターを試してみてください。</p>
+
+      <br />
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+function setup() {
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  camera(100,-80, 100);
+  describe('a box geometry with a number of lights affecting its appearance');
+}
+
+function draw() {
+  background(220);
+  
+  orbitControl();
+  
+  // use comments to enable / disable lights
+  
+  ambientLight(20);
+  
+  pointLight(
+    255, 0, 0, // color
+    40, -40,0  // position
+  );
+  
+  directionalLight(
+    0,255,0, // color
+    1, 1, 0  // direction
+  );
+  
+  let locX = mouseX - width / 2;
+  let locY = mouseY - height / 2;
+  spotLight(
+    0, 0, 255,       // color
+    locX, locY, 100, // position
+    0, 0, -1,        // direction
+    40               // radius of the spotlight cone
+  );
+  
+  // noLights();
+  
+  box();
+}
+      </script>
+
+      <h2 id="materials">マテリアルとテクスチャ</h2>
+      <p>オブジェクトは、そのマテリアルによって異なる外観になります。 マテリアルは、光がジオメトリとどのように相互作用するか、および色（またはテクスチャ）がオブジェクトに適用される方法を決定します。 マテリアルは多様であり、オブジェクトを光沢のあるもの、ざらざらしたもの、または画像でテクスチャ化されたものにすることができます。</p>
+
+      <ul>
+        <li><a class="code" href="/ja/reference/#/p5/normalMaterial">normalMaterial()</a></li>
+        <li><a class="code" href="/ja/reference/#/p5/ambientMaterial">ambientMaterial()</a></li>
+        <li><a class="code" href="/ja/reference/#/p5/emissiveMaterial">emissiveMaterial()</a></li>
+        <li><a class="code" href="/ja/reference/#/p5/specularMaterial">specularMaterial()</a></li>
+      </ul>
+
+      <p>このインタラクティブな例では、異なるマテリアルを選択して、ジオメトリの外観にどのような影響を与えるか試してみてください。 マウスを動かして、ディレクショナルライトがマテリアルに与える効果を確認できます。</p>
+
+      <iframe src="../../assets/learn/basic3d/materialsExample.html" width="720" height="350">
+      </iframe>
+
+      <p>この例で、異なるライトのコメントを追加・削除して試してみてください:</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+function setup() {
+  createCanvas(innerWidth, innerHeight, WEBGL);
+  describe('a sphere geometry with multiple materials applied to it');
+}
+
+function draw() {
+  background(220);
+  camera(200, -200, 200);
+  
+  noStroke();
+
+  ambientLight(128);
+  let locX = mouseX - width / 2;
+  let locY = mouseY - height / 2;
+  pointLight(255, 255, 255, locX, locY, 100);
+
+  // normal material shows the geometry normals
+  normalMaterial();
+
+  // ambient materials reflect under any light
+  ambientMaterial(255, 0, 0);
+
+  // emissive materials show the same color regardless of light
+  emissiveMaterial(0, 255, 0);
+
+  // specular materials reflect the color of the light source 
+  // and can vary in 'shininess'
+  shininess(10);
+  specularMaterial(0, 0, 255);
+
+  // box(50);
+  sphere();
+}
+      </script>
+
+      <p>よりカスタマイズされたマテリアルは、<a class="code">texture()</a>を使用して達成できます。 簡単に言うと、これらはジオメトリの表面にマッピングできる画像です。 これらのテクスチャは、画像からインポートしたり、シェーダーを使用してコード内で生成したりすることができます。 ジオメトリにテクスチャをマップするには、<a class="code">preload()</a>の中で<a class="code">loadImage()</a>を使用し、形状を描画する前に<a class="code">texture()</a>を呼び出してください。</p>
+
+      <script type="text/p5" data-autoplay data-p5-version="1.6.0">
+let myTexture;
+
+function preload() {
+  myTexture = loadImage("../../assets/learn/basic3d/images/simpleTexture.png");
+  // map textures between 0 and 1 to match geometry uvs
+  textureMode(NORMAL);
+}
+
+function setup() {
+  createCanvas(innerWidth, innerHeight, WEBGL);
+  describe('a rotating box with a texture of a pink scribble mapped onto it');
+}
+
+function draw() {
+  background(220);
+  
+  // apply the texture to the box
+  texture(myTexture);
+  
+  push();
+  rotateX(millis()/1000);
+  rotateY(millis()/700);
+  box();
+  pop();
+}
+      </script>
+
+
+      <div class="additionalInformation">
+        <p> 
+          シェーダーはジオメトリの外観を変更するのに役立ちますが、 このチュートリアルの範囲を超えているため、 <a href="/ja/learn/getting-started-in-webgl-shaders.html">シェーダー入門</a> のページを確認してください。
+        </p>
+      </div>
+
+      <h2 id="conclusion">結論</h2>
+
+      <p>カメラ、ライティング、マテリアルをコントロールできるようになることで、 スケッチの見た目をより柔軟に決定できるようになり、3Dスケッチに独自のスタイルを導入する可能性が広がります。 WebGL入門シリーズの次のチュートリアルでは、シェーダーが紹介され、 スケッチの見た目をさらに面白い方法で変更することができるようになります。</p>
+
+      <h3>その他のチュートリアル</h3>
+      <p>このチュートリアルは、p5.jsでWebGLを使用する基本についてのシリーズの一部です。以下の他のチュートリアルをすべてチェックしてください。</p>
+      <ul class="indexList">
+        <li><a href="/ja/learn/getting-started-in-webgl-coords-and-transform.html">座標と変換</a></li>
+        <li><a href="/ja/learn/getting-started-in-webgl-custom-geometry.html">WebGLでカスタムジオメトリの作成</a></li>
+        <li>スタイルと外観 (現在ここ)</li>
+        <li><a href="/ja/learn/getting-started-in-webgl-shaders.html">シェーダー入門</a></li>
+      </ul>
+
+      <h2 id="glossary">用語集</h2>
+
+      <h3>カメラ</h3>
+      <p>3Dシーンの視点</p>
+
+      <h3>ペルスペクティブ</h3>
+      <p>遠くのオブジェクトを小さく見せることで奥行き感を与えるカメラ投影</p>
+
+      <h3>オルソグラフィック</h3>
+      <p>奥行きに影響されない<em>直交</em>なカメラ投影。 二次元的な外観を与えます。</p>
+
+      <h3>視野角</h3>
+      <p>カメラがどれだけ見ることができるかを表す角度。</p>
+
+      <h3>フラスタム</h3>
+      <p>カメラで表示できる全領域を表す幾何学的形状。</p>
+
+      <h3>近接面と遠方面</h3>
+      <p>近接面は、ジオメトリがカメラに表示されるために最小限離れる必要がある距離を表し、 遠方面は最大距離を表します。</p>
+
+      <h3>クリッピング</h3>
+      <p>カメラのフラスタムの外にあるジオメトリのように、一部のジオメトリを選択的に表示し、他のジオメトリを表示しないこと。</p>
+
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

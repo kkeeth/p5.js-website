@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main >
+
+      <h1>p5.jsチュートリアル投稿ガイド</h1>
+      <div class="attribution">
+        このチュートリアルはTega Brainによって執筆されました。
+      </div>
+      <p>
+        教育者、寄稿者、一般のエンスージアストにp5jsチュートリアルの投稿をお願いしています。 p5jsプロジェクトは、クリエイティブ・コーディングとオープンソース開発を多様なコミュニティによりアクセスしやすくし、開発プロセスのあらゆる側面に関するチュートリアルを公開することに興奮しています。 これまでの教材には、p5の学習ガイド、プログラミング技法、オープンソースプロジェクトへの貢献方法などが含まれています。
+      </p>
+      <p>
+        新しい書かれたチュートリアルの投稿を歓迎し、このガイドでは提案、準備、投稿の手順を説明します。
+      </p>
+
+      <h2>始め方:</h2>
+      <ul class="list_view">
+        <li>
+          提案されたトピックがすでにカバーされていないことを確認してください。<a href="https://docs.google.com/spreadsheets/d/1sh3IwcCUY4Bm8N4fRZw6CwSDdQmmXgY_awjVj-UC8mo/edit#gid=0">ここに作業中のスプレッドシートがあります</a>
+          それが進行中のチュートリアルとしてリストされている場合、既存の作業に追加して公開の準備を進めることができるかもしれませんので、お気軽にお問い合わせください。
+        </li>
+        <li>
+          トピックがまだカバーされておらず、進行中としてリストされていない場合は、提案する内容について数文を書いて、その説明をeducation@p5js.orgまでメールしてください。
+        </li>
+      </ul>
+      <h2>p5jsチュートリアルをオンラインで公開するための準備方法:</h2>
+      <p>
+        チュートリアルが公開の準備が整ったら、p5jsウェブサイト用にコンテンツを準備するために、以下の手順に従ってください。
+      </p>
+      <p>
+        チュートリアルのコンテンツをtutorial-name.hbsファイルとして、<a href="https://github.com/mayaman/p5js-website/blob/master/src/templates/pages/learn/test-tutorial.hbs">この基本構造で準備します</a>
+        。このファイルに示されているように、以下に示すヘッダーが含まれている必要があります:
+      </p>
+      <img src="../../assets/learn/tutorial-guide/images/screenshot-1.png" alt="Screenshot">
+
+      <p>
+        チュートリアルが含まれるフォルダは、p5jsサイトの「tutorials」フォルダに配置されます。index.hbsというファイルは、<a href="/ja/learn/">p5.jsチュートリアルのランディングページであり、</a>
+         test-tutorial.hbsファイルはテストチュートリアルです。
+      </p>
+      <p>
+        すべてのコンテンツは以下に配置してください:
+       
+        &lt;section &gt; &lt;/section&gt;
+        ページ上のタグに、&lt;h1&gt;タグや&lt;h2&gt;タグ、&lt;p&gt;パラグラフタグによって定義されるフォーマットとともに、<a href="https://github.com/processing/p5.js-website/blob/main/src/templates/pages/learn/test-tutorial.hbs">テストチュートリアルページで示されているように行ってください。</a></p>
+      <p>
+        チュートリアルに画像が含まれる場合、それらはp5サイトのアセットフォルダに配置され、下に示すように、src/assets/learn/test-tutorial/imagesの場所に配置されます。
+      </p>
+      <img src="../../assets/learn/tutorial-guide/images/screenshot-2.png" alt="Screenshot">
+      <p>
+        ページのhtmlでコードを正しくフォーマットするには、次のタグを使用してください:
+      </p>
+       
+        <pre><code class="language-javascript">
+&lt;pre&gt;&lt;code class="language-javascript"&gt;
+Your code here!
+&lt;/code>&lt;/pre&gt;
+
+</code></pre>
+
+      <h2>p5.jsスケッチの埋め込み</h2>
+      <p>
+        p5jsを使うことで、アニメーション付き、インタラクティブ、または編集可能なコード例を使ってプログラミング概念を説明するチュートリアルを作成できます。 例はp5.jsスケッチとして準備し、チュートリアルに以下の2つの方法で埋め込むことができます。
+      </p>
+
+      <ol>
+        <li>
+          例が編集可能である場合、<a href="http://p5js.org/reference/#/p5/ellipse">p5jsサイトのリファレンスページのように</a>、p5jsウィジェットを使ってhtmlページにp5スケッチを埋め込む必要があります。<a href="https://toolness.github.io/p5.js-widget/">このガイドに従って</a>、ウィジェットを使ってp5jsスケッチを埋め込む方法を確認してください。<a href="https://github.com/toolness">Toolness</a>このガイドは、次の方が執筆しています<a href="https://github.com/processing/p5.js-website/blob/main/src/templates/pages/learn/test-tutorial.hbs"> テストチュートリアルページで</a>実際に動作を確認できます。</li>
+        <li>
+          例がアニメーションやインタラクティブであるが、編集不可である場合は、p5.jsスケッチを下記の説明に従ってページにiframeとして埋め込む必要があります。
+        </li>
+      </ol>
+
+      <h2>iframeを使ってp5スケッチを埋め込む</h2>
+
+      <p>
+        iframeは、他のページを探索できるウィンドウのようなもので、ページの残りの部分からサンドボックス化されています。 この場合、p5.jsスケッチが含まれるindex.htmlへのウィンドウになります。
+      </p>
+      <img src="https://github.com/tegacodes/p5.js-education/raw/master/images/iframe-2.jpg" alt="tutorialFileStructure" width="600">
+
+      <p>
+        p5スケッチをサイトの/src/assets/learnフォルダに、スケッチの名前でラベル付けされたフォルダに入れます。 スクリーンショットに示すように、これはiframeでリンクされたすべての画像とp5スケッチが格納される場所です。
+      </p>
+
+      <img src="../../assets/learn/tutorial-guide/images/screenshot-3.png" alt="Screenshot">
+
+<p>p5の例が含まれるサブフォルダには、sketch.jsファイルとスケッチ用のembed.htmlファイルが必要です。</p>
+<img src="../../assets/learn/tutorial-guide/images/screenshot-4.png" alt="Screenshot">
+
+<p>embed.htmlファイルにサイトのp5ライブラリへの正しいパスが設定されていることを確認してください。 ファイル構造が上記と同じであれば、p5.jsライブラリへのパスは "../../../js/p5.min.js" となります。</p>
+<p>次に、チュートリアルのコンテンツが含まれる.hbsファイルにp5jsのindexファイルをiframeとして埋め込むことができます。 iframeの埋め込みコードは以下のようになります:</p>
+  <pre><code class="language-javascript">
+&lt;iframe src="http://p5js.org/assets/learn/tes-tutorial/embed.html" width="600" height="400"&gt;
+&lt;/iframe&gt;
+</code></pre>
+
+<p>iframeのスタイリング（これは直接投稿に入れることも、スタイルシートに入れることもできます）:</p>
+  <pre><code class="language-javascript">
+&lt;style&gt; iframe{ border: none; } &lt;/style&gt;
+</code></pre>
+
+<p>ここで、ネイキッドスケッチが実行されているのを見ることができます: </p>
+<a href="http://staging.p5js.org/assets/learn/test-tutorial/embed.html">http://staging.p5js.org/assets/learn/test-tutorial/embed.html</a>
+
+<p>そして、以下のコードを使用してp5サイトに埋め込まれています:  </p>
+<a href="http://staging.p5js.org/learn/test-tutorial.html">http://staging.p5js.org/learn/test-tutorial.html</a>
+
+<p>注意すべき点は、iframeのサイズを手動で設定する必要があるため、標準サイズのものが最適です。</p>
+
+<p>また、p5.jsライブラリファイルへのリンクは、チュートリアルのすべてのコンテンツがある.epsページからは行われません。 代わりに、スケッチをレンダリングするhtmlページ（この場合は、embed.htmlと呼ばれます）に配置されます。</p>
+
+<p>p5.jsスケッチを埋め込む方法についての詳細は、<a href="https://github.com/processing/p5.js/wiki/Embedding-p5.js">こちらから。</a></p>
+<h2>仕上げ</h2>
+<p>チュートリアルの執筆が終わり、コンテンツが承認されたら、p5.jsウェブサイトのリポジトリをフォークし、 上記のようにコンテンツを準備して、p5.jsウェブサイトのリポジトリにプルリクエストを出して、あなたの貢献を公開できるようにしましょう！</p>
+
+    <p>ありがとうございます！</p>
+
+  </main>
+
+  
+  <footer>
+      <h2 class="sr-only">クレジット</h2>
+      <ul id="footer-menu" aria-labelledby="menu-title">   
+        <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+        <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+        <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+        <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+        <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+      </ul>  
+      
+      <p>
+          p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+      </p>
+  </footer>
+
+</div> <!-- end column-span -->
+
+
+<!-- outside of column for footer to go across both -->
+
+<p class="clearfix"> &nbsp; </p>
+
+<object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+</object>
+
+</div><!-- end id="get-started-page"  -->
+
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

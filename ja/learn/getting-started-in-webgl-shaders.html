@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<style>
+  .methodsList {
+    font-family: monospace;
+  }
+
+  .additionalInformation {
+    width: 100%;
+    background-color: #dedeff;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px;
+    margin: 30px 0;
+  }
+
+  .toc h3 {
+    margin-top: 15px;
+  }
+
+  .indexList {
+    padding: 15px;
+    background-color: whitesmoke;
+  }
+</style>
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main>
+      <script src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+
+      <iframe src="../../assets/learn/shaderIntro/titleExample.html" width="720" height="350">
+      </iframe>
+
+      <h1>シェーダー入門</h1>
+
+      <p>シェーダーは、グラフィックス処理ユニット（GPU）上で実行される特別なプログラムで、驚くべきことができます。 GPUを利用して多くのピクセルを一度に処理し、ノイズ生成、ぼかしのようなフィルターの適用、 ポリゴンのシェーディングなどの特定のタスクに特に適していて高速です。 シェーダープログラミングは最初はやりがいがありますが、p5.jsの2D描画とは異なるアプローチが必要です。 このドキュメントでは、シェーダープログラミングの基本を説明し、 他のリソースについて紹介します。</p>
+
+      <div class="toc">
+        <h3>目次</h3>
+        <ol>
+          <li><a href="#setup">セットアップ</a></li>
+          <li><a href="#shadinglanguage">シェーディング言語（GLSL）</a></li>
+          <li><a href="#uniforms">Uniforms: スケッチからシェーダーへのデータの受け渡し</a></li>
+          <li><a href="#conclusion">結論</a></li>          
+          <li><a href="#glossary">用語集</a></li>          
+        </ol>
+      </div>
+
+      <h2 id="setup">セットアップ</h2>
+
+      <p>p5.jsはシェーダーを扱うのに適したツールです。 なぜなら、WebGLのセットアップの多くを処理してくれるため、 シェーダーコード自体に集中できます。 シェーダーを始める前に、キャンバスをp5.jsのWebGLモデルを使ってセットアップする必要があります。
+      </p>
+
+      <pre><code class="language-javascript">
+      ...
+      function setup() {
+        createCanvas(windowWidth, windowHeight, WEBGL);
+      }
+      ..
+      </code></pre>
+
+      <p>シェーダープログラムは、<strong>頂点シェーダー</strong>と <strong>フラグメントシェーダー</strong>の2つの部分で構成されています。 頂点シェーダーは画面上に描画される3Dジオメトリの位置を影響させ、フラグメントシェーダーはカラー出力を影響させる役割を担っています。 これらは別々のファイルに格納され、<a class="code">loadShader()</a>を使ってp5.jsにロードされます。 シェーダーがロードされると、<a class="code">draw()</a>の中で使うことができます。 以下の例は、p5.jsで基本的なシェーダーをセットアップする方法を示しています。
+      </p>
+
+      <pre><code class="language-javascript">
+let myShader;
+
+function preload() {
+  // load each shader file (don't worry, we will come back to these!)
+  myShader = loadShader('shader.vert', 'shader.frag');
+}
+
+function setup() {
+  // the canvas has to be created with WEBGL mode
+  createCanvas(windowWidth, windowHeight, WEBGL);
+  describe('a simple shader example that outputs the color red')
+}
+
+function draw() {
+  // shader() sets the active shader, which will be applied to what is drawn next
+  shader(myShader);
+  // apply the shader to a rectangle taking up the full canvas
+  rect(0,0,width,height);
+}
+      </code></pre>
+
+      <h2 id="shadinglanguage">シェーディング言語（GLSL）</h2>
+
+      <p>ここで、シェーダーファイルに実際に何を書くのか疑問に思うかもしれません！ シェーダーファイルは、グラフィックスライブラリシェーディング言語（GLSL）で書かれており、 慣れ親しんでいるものとはかなり異なる構文や構造を持っています。 GLSLはC言語に似た構文を持っており、JavaScriptには存在しないいくつかの概念が含まれています。</p>
+
+      <p>まず、シェーディング言語は型について非常に厳格です。 作成する変数は、格納されているデータの種類でラベル付けする必要があります。以下は、一般的な型のリストです:</p>
+
+      <pre><code class="language-javascript">
+vec2(x,y)     // 2つの浮動小数点数のベクトル
+vec3(r,g,b)   // 3つの浮動小数点数のベクトル
+vec4(r,g,b,a) // 4つの浮動小数点数のベクトル
+float         // 小数点のある数
+int           // 小数点のない整数
+sampler2D     // テクスチャへの参照
+
+      </code></pre>
+
+      <p>一般的に、シェーディング言語はJavaScriptよりもはるかに厳格です。 たとえば、セミコロンがないとエラーメッセージが表示されます。 また、浮動小数点数や整数など、異なるタイプの数値を相互に使用することはできません。</p>
+
+      <p>まず、基本的な頂点シェーダーを見てみましょう:</p>
+
+      <pre><code class="language-javascript">
+attribute vec3 aPosition;
+
+void main() {
+  vec4 positionVec4 = vec4(aPosition, 1.0);
+  positionVec4.xy = positionVec4.xy * 2.0 - 1.0;
+  gl_Position = positionVec4;
+}
+</code></pre>
+
+      <p>この頂点シェーダーは、<em>属性（attribute）</em>で始まります。 これは、p5.jsがシェーダーと頂点位置情報を共有するために使用します。 この属性は、<a class="code">vec3</a>であり、x、y、およびzの値を含んでいます。 属性は、頂点シェーダーでのみ使用される特別な変数タイプであり、通常はp5.jsによって提供されます。 <a class="code">rect()</a>や<a class="code">vertex()</a>などのp5.jsメソッドを使用すると、p5.jsは自動的に頂点情報をシェーダーに渡します。</p>
+
+      <p>すべての頂点シェーダーには、頂点の位置を決めるための関数 <a class="code">main()</a> が必要です。 この例では、頂点シェーダーが頂点の位置を変更して、 シェーダーの出力が全体のスケッチを占めるようにします。 最後に <a class="code">main()</a> の中で、 <a class="code">gl_Position</a> に値を割り当てます。</p>
+
+      <p>まだ十分に理解できなくても心配しないでください。 頂点シェーダーは重要な役割を果たしますが、フラグメントシェーダーで作成したものがジオメトリ上で適切に表示されるようにするだけで、 多くのプロジェクトで同じ頂点シェーダーを再利用することができます。 一方、フラグメントシェーダーはシェーダーの色出力を担当し、シェーダープログラミングの大部分を行います。 以下は、赤色を表示するだけの非常にシンプルなフラグメントシェーダーです:</p>
+
+      <pre><code class="language-javascript">
+precision mediump float;
+
+void main() {
+  vec4 myColor = vec4(1.0, 0.0, 0.0, 1.0);
+  gl_FragColor = myColor;
+}
+</code></pre>
+
+      <p>フラグメントシェーダーは、floatの 'precision' を指定する行で始まります。 この値は、<a class="code">lowp</a>、<a class="code">mediump</a>、<a class="code">highp</a> のいずれかになりますが、 通常は <a class="code">mediump</a> を使用し、特定の状況では <a class="code">highp</a> を使用することがあります。</p>
+
+      <pre><code class="language-javascript">precision mediump float;</code></pre>
+
+<p>そして、頂点シェーダーと同様に、フラグメントシェーダーにも <a class="code">main()</a> 関数が必要ですが、 <a class="code">gl_Position</a> ではなく、<a class="code">gl_FragColor</a> に色を割り当てます。</p>
+
+<pre><code class="language-javascript">
+...
+vec4 myColor = vec4(1.0, 0.0, 0.0, 1.0);
+gl_FragColor = myColor;
+...
+</code></pre>
+
+<p>変数 <a class="code">myColor</a> は <a class="code">vec4</a> として定義されており、4つの値を格納します。 色を扱っているので、それらの4つの値は赤、緑、青、アルファです。シェーダーでは、スケッチで使用される 0 から 255 の色を使用せず、0.0 から 1.0 の間の値を使用します。</p>
+
+      <p>頂点シェーダーとフラグメントシェーダーが用意できたら、これらを別々のファイル（shader.vert と shader.frag ）に保存し、<a class="code">loadShader()</a> を使用してスケッチに読み込むことができます。</p>
+
+      <h2 id="uniforms">Uniforms: スケッチからシェーダーへのデータの受け渡し</h2>
+
+      <p>このようなシンプルなシェーダーは、それ自体で役立つことがありますが、p5.js スケッチからシェーダーに変数を伝達する必要がある場合もあります。 ここでユニフォームが登場します。ユニフォームは、スケッチからシェーダーに送信できる特殊な変数です。 これにより、シェーダーをより制御できるようになります。例えば、p5.js のメソッド <a class="code">millis()</a> を使用して 'time' ユニフォームをスケッチに渡し、動きを導入することができます。 シェーダーでは、ユニフォームはファイルの先頭、<a class="code">main()</a> の外部で定義されます。 次のフラグメントシェーダーでは、スケッチから色を変更できるようにするためのカラーユニフォーム、<a class="code">myColor</a>を作成しています。</p>
+
+      <pre><code class="language-javascript">
+precision mediump float;
+
+uniform vec3 myColor;
+
+void main() {
+  // the color we have passed in as a uniform is assigned to the pixel
+  gl_FragColor = vec4(myColor, 1.0);
+}
+      </code></pre>
+
+      <p>p5.jsスケッチに戻ると、この色は<a class="code">setUniform()</a>を使って送信できるようになります。</p>
+
+      <pre><code class="language-javascript">
+...
+function draw() {
+  shader(myShader);
+  // setUniform can then be used to pass data to our shader variable, myColor
+  myShader.setUniform('myColor', [1.0,0.0,0.0]); // send red as a uniform
+  // apply the shader to a rectangle taking up the full canvas
+  rect(0,0,width,height);
+}
+...
+      </code></pre>
+
+      <p>また、ジオメトリに関する特定のデータをスケッチと頂点シェーダー間で共有するために通常使用される<em>属性</em>や、 頂点シェーダーとフラグメントシェーダー間でデータを共有する<em>バリング</em>変数があります。 これにより、フラグメントシェーダー内で位置やその他のジオメトリデータを 使用することができます。</p>
+
+      <pre><code class="language-javascript">
+// (thank you to Adam Ferriss for the foundation of these example shaders)
+// position information that is used with gl_Position
+attribute vec3 aPosition;
+
+// texture coordinates 
+attribute vec2 aTexCoord;
+
+// the varying variable will pass the texture coordinate to our fragment shader
+varying vec2 vTexCoord;
+
+void main() {
+  // assign attribute to varying, so it can be used in the fragment
+  vTexCoord = aTexCoord;
+
+  vec4 positionVec4 = vec4(aPosition, 1.0);
+  positionVec4.xy = positionVec4.xy * 2.0 - 1.0;
+  gl_Position = positionVec4;
+}
+</code></pre>
+
+      <p>これでテクスチャ座標属性がバリング変数に割り当てられているため、フラグメントシェーダーでテクスチャ座標を使用できます。 以下の例では、テクスチャ座標の青とマゼンタの可視化が表示されます。</p>
+
+      <div style="display:flex; align-items: center; justify-content: center;">
+        <pre><code class="language-javascript">
+precision mediump float;
+
+varying vec2 vTexCoord;
+
+void main() {
+  // now because of the varying vTexCoord, we can access the current texture coordinate
+  vec2 uv = vTexCoord;
+  
+  // and now these coordinates are assigned to the color output of the shader
+  gl_FragColor = vec4(uv,1.0,1.0);
+}
+</code></pre>
+        <img style="padding:30px;width:30%;" src='../../assets/learn/basic3d/images/uv_example.png'
+          alt="an illustration showing UV coordinates, the x axis in red, and the y axis in blue.">
+      </div>
+
+
+      <div class="additionalInformation">
+        p5.jsは多くの属性とユニフォームを処理してくれます。<a href="https://github.com/processing/p5.js/blob/374acfb44588bfd565c54d61264df197d798d121/contributor_docs/webgl_mode_architecture.md">p5.jsが シェーダーに送信するすべての属性のリストをこちらで確認できます</a>。
+      </div>
+
+      <h2 id="conclusion">結論</h2>
+
+      <p>これらのスキルを持っていれば、基本的なシェーダーを作成することができますが、シェーダープログラミングは非常に深いものであり、 このチュートリアルを超える多くのシェーダートピックがあります。 p5.jsのシェーダーは、視覚的な効果やエフェクト、さらには3Dジオメトリにマップされるテクスチャを作成するための強力なツールになり得ます。
+      </p>
+
+      <p>シェーダーについてもっと学びたいですか？これらのウェブサイトをチェックしてみてください！</p>
+
+      <ul class="indexList">
+        <li><a href="https://thebookofshaders.com/">The Book of Shaders</a>、Patricio Gonzalez Vivoと
+  Jen Loweによるシェーダーガイド。</li>
+<li><a href="https://itp-xstory.github.io/p5js-shaders/#/">P5.js shaders</a>、Casey Conchinhaと
+  Louise Lessélによるシェーダーガイド。</li>
+<li><a href="https://www.shadertoy.com/">Shadertoy</a>、ブラウザエディタで書かれたシェーダーの大規模なオンラインコレクション。</li> <li><a href="https://github.com/aferriss/p5jsShaderExamples">p5jsShaderExamples</a>、Adam Ferrissによるリソースコレクション。</li>
+      </ul>
+
+      <h3>その他のチュートリアル</h3>
+      <p>このチュートリアルは、p5.jsでWebGLを使用する基本についてのシリーズの一部です。以下の他のチュートリアルをすべてチェックしてください。</p>
+      <ul class="indexList">
+        <li><a href="/ja/learn/getting-started-in-webgl-coords-and-transform.html">座標と変換</a></li>
+        <li><a href="/ja/learn/getting-started-in-webgl-custom-geometry.html">WebGLでカスタムジオメトリの作成</a></li>
+        <li><a href="/ja/learn/getting-started-in-webgl-appearance.html">スタイルと外観</a></li>
+        <li>シェーダー入門 (現在ここ)</li>
+      </ul>
+
+      <h2 id="glossary">用語集</h2>
+
+      <h3>シェーダー</h3>
+      <p>多くの視覚効果やフィルタを効率的に生成できる特殊なグラフィックカードプログラム。</p>
+
+      <h3>GLSL</h3>
+      <p>Graphics Library Shader Language（GLSL）は、シェーダーを記述するために使用されるプログラミング言語。</p>
+
+      <h3>Uniform</h3>
+      <p>スケッチからシェーダーに渡される変数。</p>
+
+      <h3>ベクター</h3>
+      <p>色、位置などを表すために、通常は2、3、 または4の数値を格納するデータ型。</p>
+
+      <h3>Float</h3>
+      <p>小数点を持つことができる浮動小数点数を格納するデータ型。</p>
+
+      <h3>Int</h3>
+      <p>小数点のない整数を格納するデータ型。</p>
+
+      <h3>サンプラー</h3>
+      <p>シェーダーに渡されるテクスチャを表すデータ型。</p>
+
+      <h3>属性（Attribute）</h3>
+      <p>p5.jsスケッチで生成され、頂点シェーダーで利用可能なGLSL変数。 ほとんどの場合、p5.jsによって提供されます。</p>
+
+      <h3>テクスチャ</h3>
+      <p>シェーダープログラムに渡される画像。</p>
+
+      <h3>タイプ</h3>
+      <p>データの特性を示すラベル。例えば、int、float、vectorなど。</p>
+
+      <h3>頂点シェーダー</h3>
+      <p>シェーダープログラムの一部で、3D空間でのジオメトリの位置を決定する役割を担っています。</p>
+
+      <h3>フラグメントシェーダー</h3>
+      <p>シェーダープログラムの一部で、 シェーダーが出力する各ピクセルの色と外観を決定する役割を担っています。</p>
+
+    </main>
+
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>

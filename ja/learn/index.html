@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="p5.js a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.">
+    <title tabindex="1">learn | p5.js</title>
+    <link rel="stylesheet" href="/assets/css/all.css?v=8dd5ca">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/../../assets/img/favicon.ico">
+    <link rel="icon" href="/../../assets/img/favicon.ico">
+
+
+    <script src="/../../assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/ace.js"></script>
+    <script src="/../../assets/js/vendor/ace-nc/mode-javascript.js"></script>
+    <script src="/../../assets/js/vendor/prism.js"></script>
+    <script src="/assets/js/init.js?v=97b4f7"></script>
+
+
+  </head>
+  <body>
+
+    <a href="#content" class="sr-only">コンテンツにスキップ</a>
+    
+    <!-- p5*js language buttons -->
+    <div id="i18n-btn">
+      <h2 id="i18n-settings" class="sr-only">言語設定</h2>
+      <ul id="i18n-buttons" aria-labelledby="i18n-settings">
+        <li><a href='#' lang='en' data-lang='en'>English</a></li>
+        <li><a href='#' lang='es' data-lang='es'>Español</a></li>
+        <li><a href='#' lang='zh-Hans' data-lang='zh-Hans'>简体中文</a></li>
+        <li><a href='#' lang='ko' data-lang='ko'>한국어</a></li>
+        <li><a href='#' lang='hi' data-lang='hi'>हिन्दी</a></li>
+        <li><a href='#' lang='ja' data-lang='ja'>日本語</a></li>
+      </ul>
+    </div>    <!-- .container -->
+    <div class="container">
+
+      <!-- logo -->
+      <header id="lockup">
+        <a href="/ja/">
+          <img src="/../../assets/img/p5js.svg" alt="p5 homepage" id="logo_image" class="logo" />
+          <div id="p5_logo"></div>
+        </a>
+      </header>
+      <!-- close logo -->
+
+      
+
+<div id="learn-page">
+
+  
+  <!-- site navigation -->
+  <div class="column-span">
+    <nav class="sidebar-menu-nav-element">
+      <h2 id="menu-title" class="sr-only">サイトナビゲーション</h2>
+      <input class="sidebar-menu-btn" type="checkbox" id="sidebar-menu-btn" />
+      <label class="sidebar-menu-icon" for="sidebar-menu-btn"><span class="sidebar-nav-icon"></span></label>
+      <ul id="menu" class="sidebar-menu" aria-labelledby="menu-title">
+        <li><a href="/ja/">ホーム</a></li>
+        <li><a href="https://editor.p5js.org">エディター</a></li>
+        <li><a href="/ja/download/">ダウンロード</a></li>
+        <li><a href="/ja/download/support.html">寄付する</a></li>
+        <li><a href="/ja/get-started/">スタート</a></li>
+        <li><a href="/ja/reference/">リファレンス</a></li>
+        <li><a href="/ja/libraries/">ライブラリ</a></li>
+        <li><a href="/ja/learn/">学ぶ</a></li>
+        <li><a href="/ja/teach/">教える</a></li>
+        <li><a href="/ja/examples/">サンプル</a></li>
+        <li><a href="https://p5js.org/contributor-docs/#/">貢献する</a></li>
+        <li><a href="/ja/books/">書籍</a></li>
+        <li><a href="/ja/community/">コミュニティ</a></li>
+        <li><a href="https://showcase.p5js.org">ショーケース</a></li>
+  
+      </ul>
+    </nav>
+  </div>
+
+  <div class="column-span">
+
+    <main id="content">
+      <h1>学ぶ</h1>
+
+      <p>これらのチュートリアルは、特定のトピックのより詳細な説明やステップバイステップの概要を提供します。 以下の
+        <a href="/ja/examples">サンプルページ
+        </a>をチェックして、さまざまなp5.jsトピックの短いデモを探索してください。
+      </p>
+
+      
+        <h2 class="tutorial-title">p5.jsの紹介</h2>
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="/ja/get-started/">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>初めに</h3>
+                </a>
+              </div>
+              <p>p5.jsへようこそ！<br> このイントロダクションでは、p5.jsプロジェクトの基本的な設定について説明します。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki/p5.js-overview">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>p5.js概要</h3>
+                </a>
+              </div>
+              <p>p5.jsの主要な機能の概要です。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki/Processing-transition">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>p5.jsとProcessing</h3>
+                </a>
+              </div>
+              <p>両者の主な違い、および どのように変換するかについて説明します。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki/Local-server">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>ローカルサーバーの使用</h3>
+                </a>
+              </div>
+              <p>Mac OSX、Windows、Linuxでローカルサーバーを設定する方法です。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>p5.jsウィキ</h3>
+                </a>
+              </div>
+              <p>コミュニティによって提供される追加のドキュメントやチュートリアルです。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="p5-screen-reader.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>スクリーンリーダーとp5</h3>
+                </a>
+              </div>
+              <p>スクリーンリーダーで簡単に使用できるようにp5を設定する方法です。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+      
+        <h2 class="tutorial-title">p5.jsの接続</h2>
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki/p5.js,-node.js,-socket.io">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>node.jsとsocket.io</h3>
+                </a>
+              </div>
+              <p>node.jsサーバーとp5.jsの使用、socket.ioを介した通信について説明します。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+      
+        <h2 class="tutorial-title">プログラミングトピック</h2>
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki/Beyond-the-canvas">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>キャンバスを超えて</h3>
+                </a>
+              </div>
+              <p>キャンバス以外のページ上の要素の作成と操作です。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="color.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>色</h3>
+                </a>
+              </div>
+              <p>デジタルカラーの紹介。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="coordinate-system-and-shapes.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>座標系と形状</h3>
+                </a>
+              </div>
+              <p>簡単な形状の描画と座標系の使い方。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="curves.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>曲線</h3>
+                </a>
+              </div>
+              <p>p5.jsの3種類の曲線 (円弧、スプライン曲線、ベジエ曲線) の紹介。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="interactivity.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>相互作用</h3>
+                </a>
+              </div>
+              <p>マウスとキーボードを使った相互作用の紹介。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="program-flow.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>プログラムフロー</h3>
+                </a>
+              </div>
+              <p>p5.jsでプログラムフローを制御する方法の紹介。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+      
+        <h2 class="tutorial-title">WebGL入門</h2>
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="getting-started-in-webgl-coords-and-transform.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>座標と変換</h3>
+                </a>
+              </div>
+              <p>3Dセットアップ、座標、変換の基礎 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="getting-started-in-webgl-custom-geometry.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>WebGLでカスタムジオメトリを作成する</h3>
+                </a>
+              </div>
+              <p>WebGLでカスタムジオメトリを作成する </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="getting-started-in-webgl-appearance.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>スタイリングと外観</h3>
+                </a>
+              </div>
+              <p>WebGLでのマテリアルとライティングの基礎 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="getting-started-in-webgl-shaders.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>シェーダー入門</h3>
+                </a>
+              </div>
+              <p>WebGLを使用してp5js内でシェーダーを作成する基本 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+      
+        <h2 class="tutorial-title">より優れたプログラマーになる</h2>
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="debugging.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>デバッグ</h3>
+                </a>
+              </div>
+              <p>全ての人に向けたデバッグのフィールドガイド。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/wiki/Optimizing-p5.js-Code-for-Performance">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>パフォーマンスのためのp5.jsコードの最適化</h3>
+                </a>
+              </div>
+              <p>コードをより速く、スムーズに実行するための最適化のためのヒントやトリックのチュートリアル。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="tdd.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>ユニットテストとテスト駆動開発</h3>
+                </a>
+              </div>
+              <p>インストールデイの苦痛から救われる。ユニットテストとその使い方について、Andy Timmonsによる紹介。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+      
+        <h2 class="tutorial-title">コミュニティへの貢献</h2>
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/blob/main/contributor_docs/">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>開発</h3>
+                </a>
+              </div>
+              <p>開発への貢献の始め方と概要。 </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="https://www.luisapereira.net/teaching/materials/processing-foundation">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>p5.jsの内部を見る</h3>
+                </a>
+              </div>
+              <p>Luisa Pereiraによるp5.js開発のためのファイル構造やツールの紹介。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+          
+            <div class="left-column">
+            
+              <div class="label">
+                <a class="nounderline" href="tutorial-guide.html">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>チュートリアルの作成</h3>
+                </a>
+              </div>
+              <p>p5.jsプログラミングチュートリアルの作成ガイド </p>
+            </div>
+            
+          
+        
+          
+            <div class="right-column">
+             
+              <div class="label">
+                <a class="nounderline" href="https://github.com/processing/p5.js/blob/main/contributor_docs/creating_libraries.md">
+                  <img alt="" src="../../assets/img/learn/lib_placeholder.jpg">
+                  <h3>ライブラリの作成</h3>
+                </a>
+              </div>
+              <p>p5.jsアドオンライブラリの作成方法です。 </p>
+            </div>
+          
+            <div class="spacer"></div>
+             
+          
+        
+      
+
+    </main>
+    
+    <footer>
+        <h2 class="sr-only">クレジット</h2>
+        <ul id="footer-menu" aria-labelledby="menu-title">   
+          <li><a href="https://discourse.processing.org/c/p5js" target=_blank class="other-link">Forum</a></li>
+          <li><a href="http://github.com/processing/p5.js" target=_blank class="other-link">GitHub</a></li>
+          <li><a href="http://twitter.com/p5xjs" target=_blank class="other-link">Twitter</a></li>
+          <li><a href="https://www.instagram.com/p5xjs/" target=_blank class="other-link">Instagram</a></li>
+          <li><a href="https://discord.gg/SHQ8dH25r9" target=_blank class="other-link">Discord</a></li>
+        </ul>  
+        
+        <p>
+            p5.js is currently led by <a href='http://qianqian-ye.com/' target="_blank">Qianqian Ye</a> and was created by <a href='https://lauren-mccarthy.com' target="_blank">Lauren Lee McCarthy</a>. p5.js is developed by a community of collaborators, with support from the <a href="https://processingfoundation.org/" target="_blank">Processing Foundation</a> and <a href="https://itp.nyu.edu/itp/" target="_blank">NYU ITP</a>. Identity and graphic design by <a href="https://jereljohnson.com/" target="_blank">Jerel Johnson</a>. <a href="/ja/copyright.html">&copy; Info</a>。
+        </p>
+    </footer>
+
+  </div> <!-- end column-span -->
+
+  
+  <!-- outside of column for footer to go across both -->
+  
+  <p class="clearfix"> &nbsp; </p>
+  
+  <object type="image/svg+xml" data="../../assets/img/thick-asterisk-alone.svg" id="asterisk-design-element" aria-hidden="true">
+  </object>
+
+</div><!-- end id="get-started-page"  -->
+
+
+    </div> <!-- close class='container'-->
+
+    
+    <nav id="family" aria-labelledby="processing-sites-heading">
+      <h2 id="processing-sites-heading" class="sr-only">Processing Sister Sites</h2>
+      <ul id="processing-sites" aria-labelledby="processing-sites-heading">
+        <li><a href="https://processing.org">Processing</a></li>
+        <li><a class="here" href="/ja/">p5.js</a></li>
+        <li><a href="https://py.processing.org/">Processing.py</a></li>
+        <li><a href="https://android.processing.org/">Processing for Android</a></li>
+        <li><a href="https://pi.processing.org/">Processing for Pi</a></li>
+        <li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+      </ul>
+      <a tabindex="1" href="#content" id="skip-to-content">Skip to main content</a>
+    
+    
+    </nav>
+    <script>
+    var langs = ["en","ja"];
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-53383000-1', 'auto');
+    ga('send', 'pageview');
+
+    $(window).ready(function() {
+      if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        $('#top').remove();
+      } else {
+        $('#top').show();
+      }
+    });
+    </script>
+
+
+  </body>
+</html>
